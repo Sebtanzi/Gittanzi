@@ -1,0 +1,2675 @@
+Chapter 1
+
+=================================
+COBIT 5 (Control Objective for Information and Related Technology):
+		1. Meeting Stakeholder Needs
+		2. Covering the enterprise end-to-end
+		3. Applying a single, integrated framework
+		4. Enabling a Holistic Appoach
+		5. Separating Governance from Management
+
+STRIDE model :
+		Spoofing = access through falsified identity (IP adress, MAC adress, user names, system names, SSID, email adress,...)
+		Tampering = unauthourized changes of data in transit or in storage, affects integrity and availability
+		Repudiation = ability to deny having performed an action, may result in innocent third parties being blamed
+		Information disclosure = revelation or distribution of private/confidential information
+		Denial of Service = prevent authorized source of a resource, through flaw exploitation,/connection overloading/traffic flooding
+		Elevation of priviledge = grants greater priviledge to an account
+
+DREAD system to evaluate attack: High/Middle/Low or 3/2/1
+		Damage potential = how sever
+		Reproductibility = how complicated to reproduce
+		Exploitability  = how hard to perform
+		Affected users = how many users likely to be attacked
+		Discoverability = how hard to discover the weakness
+
+Level of government/military classification (acronyme = US Can Stop Terrorism)
+		Top secret	-|
+		Secret		-|= Classified
+		Confidential	
+		Sensitive but unclassified
+		Unclassified
+
+Level of Busines/private sector classifications levels
+		Confidential (= proprietary,related to company)/Private (related to individuals)
+		Sensitive
+		Public
+
+======================================================================================================================
+Chapter 2
+Personal security and Risk management Concepts
+
+======================================================================================================================
+Personal security policies
+	job description = first description of security needs
+	seperation of duties = critical, significant and sensitive work tasks are divided among several individual admin
+	Job responsabilities = specific work tasks an employee is required to perform ona regular basis	
+	Job rotation = rotatins employees among multiple job positions
+	collusion = several people work together to perpetrate a crime
+
+Risk Terminology
+	Asset = anything within an environment that should be protected
+	Asset Valuation	= dollar value assigned to an asset
+	Threats	= potential occurrence that may cause to undesirable outcome for an org or for aspecific asset
+	threats agents = people or programs, HW, systems
+	threats events = accidental and intentional exploitations of vulnerabilities
+	Vulnerability = weakness in an asset or weakness (or abscence) of a safeguard or countermeasure
+	Exposure = being susceptible to asset loss because of a threat
+	Risk = possibility that a threat will exploit a vulnerability to cause harm to an asset
+	Safeguards (or countermeasures)	= anything that removes or reduces vulnerabilities against specific threat(s)
+	Attack = exploitation of a vulnerability by a threat agent
+	Breach = occurence of a security mechanism being bypassed by a threat agent
+
+4 possible response to risk
+	reduce or mitigate = implementing of safeguards
+	assign or transfer (insurance and outsourcing)
+	accept = risk tolerance or risk apetite (valuation by management of the cost/benefice analysis)
+	reject or ignore = unacceptable possible response
+
+Residual risk = risk remaining after implementing safeguards
+Total risk = threats * vulnerabilities * asset values
+total risk - controls gap = Residual risk
+
+Types of control
+	deterrent = deployed to discourage violation of security policies
+	preventive = stop unwanted on unauthorized activity from occuring
+	detective = discover detect unwanted activity
+	compensating = provide various options to other existing controls
+	corrective = modifies the environment to return systems to normal after an unwanted activity
+	recovery = extension of corrective controls, but more advanced and complex
+	Directive = direct, confine, or control the actions of subjects to force compliance to security policy
+
+Quantitative risk analysis
+	= concrete probability percentages
+	1.Assign Asset Value (AV), in $		
+	2.Exposure Factor (EF) = loss potential, in %
+	3.calculate single loss expectancy (SLE), in $, SLE = AV * EF
+	4.Assess the annualized rate of occurence (ARO), = probability determination, in unit/year
+	5.Derive the annualized loss expectancy (ALE), in $/year, ALE = ARO * SLE
+	6.Perform cost/benefit analysis of countermeasures, needs calculate new ALE with implemented countermeasure
+		(safeguard often reduce ARO, not AV nor EF)
+		-> Annual Cost of Safeguard (ACS) = ALE before safeguard - ALE after implementing safeguards
+
+6 step RMF (Risk Management Framework)
+	1.security categorization based on impact analysis
+	2.security control selection = initial set of baseline security control
+	3.security control implementation = describe how
+	4.security control assessment = 
+	5.information system assessment (FR=evaluation)
+	6.security control monitoring
+
+
+======================================================================================================================
+============================================================================================================
+
+Chapitre 3:
+Business Continuity Planning
+
+BCP 4 main steps:
+	Project scope and planning
+	Business impact assessment
+	Continuity Planning
+	Approval and implementation
+
+Project scope and planning
+	requires:
+		structured analysis from crisis planning point of view
+		creation of BCP team approved by senior management
+		assessment of the resources available
+		analysis of the legal and regulatory landspace
+
+Business impact assessment (BIA)
+	Quantitative decision making = numbers and formulas to reach a decision
+	Qualitative Decision Making = takes non-numerical factors, like emotions, investor/customer confidence, workforce stability
+		leads to categories of prioritizations (high/medium/low)
+
+	set up the MTD and RTO (Recover Time Objective): goal of BCP: RTO < MTD
+
+	SLE = AV * EF
+	ALE = SLE * ARO
+	ALE = AV * EF * ARO
+
+Continuity Planning
+	Strategy development = bridges gap between the business impact assessment and the continuity planning phases of BCP dev
+	
+Plan Approval = needs top-level endorsement of the plan
+	Plan Implementation = BCP team should supervise the conduct of an appropriate BCP maintenance program
+
+
+============================================================================================================
+============================================================================================================
+
+Chapter 4
+Laws, regulations, and compliance
+
+============================================================================================================
+
+Categories of Law
+	criminal law: protect society, prosecuted by federal and state gov
+	civil law: framework for transaction of business, court and argued by the two affected party
+	admin law: used by government agencies to effectively carry out day-to-day business
+	federal laws -> federal courts system
+	state laws 
+
+Comprehensive Crime Control Act 
+(CCCA) in 1984								
+	|	
+Computer Fraud and Abuse Act			Computer Security Act
+(CFAA) in 1986				->	CSA in 1987
+move to all "federal interest" computers	create NIST,security plan and plan for operator
+	|					NSA retain authority on sensitive information
+1994 CFAA Amendment				
+any computer used in interstate commerce
+	|
+1996 National Information Infra Protection Act
+broadens CFAA to cover computer systems used in international commerce
+extends similar protections to portions of the national infra other than computing systems (railroads, pipelines...)
+treats any intentional or reckless (FR=temeraire,imprudent) act that cause damage as felony
+
+1991 Federal Sentencing Guidelines
+prudent man rule: senior executives ensures due care
+minimize punishment for infractions by demonstrating due diligence
+
+1995 Paperwork Reduction Act 
+agencies must obtain Office of Management and Budget (OMB) approval before requesting most types of information from the public
+	|			
+2000 Government Information Security Reform Act (GISRA)
+provides a comprehensive framework for establishing the effectiveness of controls over information resources
+
+2002 Federal Information Security Management Act (FISMA)
+federal agencies implement an information security programs for agency operations
+government agencies include the activity of contractor
+NIST implement following elements:
+	periodic assessment of risks
+	policies and procedures that are based on risk assessment
+
+Intellectual Properties
+	copyrights = garanties the creators of "original works of authorship" protection, 8 broad categories
+		Digital Millenium Copyright Act (DMCA) provides compliance to World Intellectual Property Organization (WIPO)
+
+	trademarks = words, slogan, and logos to identify a company and its products
+		10y period renewed unlimited successive 10y period
+
+	patents = protects intellectual property rights of inventors
+		20y inventor granted exclusive rights to use the invention
+
+	trade secrets = absolutly critical to the business and significant damage would result if it were disclose
+		ex.: manufactuging process, advanced statistical model
+		2 majors issues:
+			filling copyright and patent disclose the invention
+			copyrights and patents are limited in time
+
+Licensing
+	contractual license agreements use written contracts between software vendor and customer	
+	shrink-wrap license agreements written outside the software packaging
+	click-through license agreements, during installation process
+	cloud services agreements: link and checkbox for confirm
+	UCITA: Uniform Computer Information Transactions Act
+		provides common framework for the conduct of computer-based business transactions
+	BSA Business Software Alliance
+
+US Privacy Law
+4th amendment =	right of the people to be secure in their persons, houses, papers and effects, against unreasonable search and seizures
+1974 Privacy Act
+	severely limits the ability of Federal Government agencies to disclose private info
+	provides formal procedure for individual to gain access to records the gov maintains and to request that incorrect records be amended
+1986 ECPA Electronic Communications Privacy Act
+	crime to invade the electronic privacy of individual
+1994 CALEA Communications Assistance for Law Enforcement
+1996 Economic and Protection of Proprietary Information Act
+1996 HIPAA Health Insurance Portability and Accountability Act
+	HMO Health Insurance Organization
+2009 HITECH Heath Information Technologue for Economic and Clinical Health
+	amended HIPAA -> HIPAA Omnibus Rule in 2013
+	how to treat Business Associates (BA)
+		Protected Health Information (PHI)
+		Business Associates Agreement (BAA)
+	 HITECH breach information rule: notify affected users of HIPAA-covered entity whose experience data breach
+		vary from state to state
+		include: Social Security Number / Driver's license / State id / Credit card / Bank account / medical records / health insurance info
+1998 Children's Online Privacy Act COPPA
+	arents opportunity to review any information collected from their children and permanently delete
+	
+1999 Gramm-Leach-Billy Act (GBLA)
+	 limitations on the type of information that could be exchange among subsidiaries of same corporation
+
+2001 USA PATRIOT Act
+	Providing Appropriate Tools Required to Intercept and Obstruct Terrorism
+	broden law inforcement
+	ISP (internet service provider) may provide government with large range of information
+		
+Family Educational Rights and Privacy Act (FERPA)
+	inspect and request correction to any educational records
+	schools not release personal information from students records
+
+1998 Identity Theft and Assumption Deterrence Act
+	extend victim to person whose identity was stolen
+
+Compliance
+	PCI DSS compliance 12 main requirements: (PCI DSS Standards)
+		install and maintain firewall to protect cardholder data
+		not use vendor suppplied defaults for system passwords
+		protects stored cardholder data
+		encrypt transmissions of cardholder
+		protect all system against malware
+		develop and maintain secure systems
+		restrict access to cardholder data
+		identigy and authenticate access
+		resctrict phycisal acces
+		maintain a policy
+
+============================================================================================================
+============================================================================================================
+
+Chapter 5
+Protecting Security Assets
+
+============================================================================================================
+7 principles to opt for US company to the EU program:
+	Notice: org must inform individuals aout the purpouse of collecting data
+	Choice: org must offer opportunity to opt out
+	Onward transfer: org can only transfer data to other than organizations that comply with Notice et Choice principles
+	Security: must take reasonable precautions to protect data
+	Data integrity: must insure data is reliable
+	Access: individuals must have access to personal information that the org holds
+	Enforcement: org must assure compliance with the principles
+
+Symmetric cryto
+	Advanced Encryption Standard (AES) = most popular symmetric encryption algorithm, 112b 168b or 256b
+	Triple DES (or 3DES) uses 56-bits key but newer use 112-bits or 168-bits
+	Blowfish uses 32 bits to 448 bits adds 128 additional bits as a salt to protect against rainbow table attacks
+
+Transport Encryption
+	HTTPS (Hypertext Transfer Protocol Secure) uses Transport Layer Security (TLS)
+	Secured Sockets Layer (SSL) = presursor of TLS = created by Netscape, sensible to POODLE
+	VPN Virtual Private Network uses TLS and IPsec (Internet Protocol Security)
+	SSH Secure Shell = strong encryption protocol included in Secure Copy (SCP) and Secure File Transfer Protocol (SFTP)
+		=/= FTP transmits data in cleartext
+
+Identifying Data roles (NIST SP 800-18)
+	Data owners = person who has ultimate organization responsability for data
+	System Owners = person who owns the system that processes sensitive data
+	Business/Mission Owners = overlap with the responsabilities of the system owner or bet the same role
+	Data Processors = any system used to process data or person that controls the process of data
+	Administrators = responsible for granting appropriate access to personnel
+	Custodians = helps protect the integrity and security of data
+	User = any person who access data to accomplish work task
+
+Defining Classifications
+	Government data classifications:
+		top secret = disclosure cause exceptionnaly grave damage to national security
+		Secret = disclosure cause serious damage to national security
+		Confidential = disclorue cause damage to national security
+		Unclassified = not top secret, or scret or confidential = available to anyone
+			
+	Non government classifications:	
+		Class 3 to Class 0
+		Confidential (or Proprietary) = Class 3 = Top secret
+		Private = Classe 2 = Secret
+		Sensitive = Class 1 = Confidential
+		Public = Classe 0 = Unclassified
+
+	Confidential or Proprietary = disclosure cause exceptionally grave damage to the mission of org
+	Private	= should stay private but doesn't meet Confidential definition
+	Sensitive = disclosure could cause damage to the org
+	Public = unclassified = posted in web site, brochure, or any public source, but need integrity (no modification from outside)
+
+Destroying sensitive Data
+	Erasing = delete operation against a file, or selection of files, or entire media
+	Clearing (or overwriting) = process of preparing media for reuse
+				1. First character = 	1010 0001
+				2. Complement =		0101 1110
+				3. Random bits =	1101 0100
+	Purging = more intense clearing that prepares media for reuse in less secure environment
+	Declassification = purges media or system in preparation to reuse in a unclassified environment
+	Sanitization = combination of processes that removes data from a system or from media
+	Degaussing = creating a strong magnetic field that erases data on some media
+	Destruction = inciniration, crushing, shredding, disintegration, disolving
+
+
+============================================================================================================
+=======================================================================================================================================================
+
+Chapitre 6:
+Cryptography and Symmetric Key Algorithms
+			
+=======================================================================================================================================================
+Goals of Crypto
+	Confidentiality	= data remains private white at rest or in transit (= in the wire, refers to network cables)
+	Integrity = ensures data not altered without authourization
+	Authentication = verify claimed identity of system users
+	Nonrepudiation = assure the recipient that the message is originated by the sendor
+
+Concepts
+	plaintext (P) message = message before put into coded form
+	encrypt = uses a cryptoalgorithm to code the plaintext message and create a ciphertext (C) message		
+	Keys = cryptoalgorithm uses keys to maintain their security
+	Key space = range of value that are valid for use as a key for a specific algorithm
+	Bit Size = key space in difined by bit size, number of binary bits in the key
+	algorithm = set of rules, usually mathematical, that dictates how to enciphering and deciphering processes
+
+Boolean Mathematics
+	AND = symbol ^
+	OR = symbol inversed of AND
+	NOT = symbol ~
+	EXCLUSIVE OR (or XOR) = circled + : 0+0=0, 1+1=0, 1+0=1
+	Modulo function = symbol mod = symbol %
+
+Cryptographic Mathematics
+	One way functions = mathematical operation, makes impossible to retrieve input produced based on the output
+	Nonce = random number that acts as a placeholder variable in mathematical functions, ex: IV
+	Zero-knowledge proof = prove your knowledge of a fact to a third party without revealing the fact
+	Split Knowledge = information divided among multiple users, see key escrow database
+	Transposition Ciphers = rearrange the letter in a plaintext message, ex.: apple > elppa
+	Substitution ciphers = replaces each character or bit with a different character, ex.: ROT3 > C = (P+3) mod 26
+	One-Time pads (or Vernam ciphers): uses a different substitution for each letter, key lenght = N (1 for Caesar)
+	Running key cipher (or book Cipher) = use a book to get the key
+	Block Cipher = operates on "chunks"
+	Stream Ciphers = operates on one character or bit at a time, ex.: caesar cipher
+	Confusion = complexe relationship between P and the key, cant get the key by altering P and analyze C
+	Diffusion = a change in the P results in multiple changes spread throughout the ciphertext
+
+Modern Crypto:
+	Symmetric Key algorithm: rely on "shared secret" to encrypt and decrypt data
+		key distribution = major problem, need out-of-band exchange
+		does not implement non-repudiation
+		not scalable
+		very fast
+		key requirement: n*(n-1)/2
+
+	Asymmetric key algo (or public key algo): each user: 1 public shared with all users, 1 private kept secret
+		assures digital signature techno
+		provide integrity, authentication and non repudiation
+		scalable: user easy to delete and new user needs only one pair of keys / no preexisting comm needed / 
+		very slow
+		key requirement: n*2
+
+	Hashing Algorithm = summaries of the message's content
+		MD2/MD5 (Message Digest)
+		SHA-0, SHA-1, SHA-2 (Secure Hash Algorithm)
+		HMAC (Hash Message Authentication Code)
+
+Symmetric Cryptography
+	DES = 64-bits block cipher, key = 56 bits long, 16 rounds or exclusive OR, 5 modes:
+		Electronic Codebook (ECM) = encrypts the block using the chosen secret key
+		Cipher Block Chaining (CBC) = each block is XORed the block preceding, then encrypted using DES algo
+		Cipher Feedback Mode (CFB) = streaming cipher version of CBC, operates in real time
+		Output Feedback Mode (OFB) = XORs block text with seed value instead of previous ciphered block
+		Counter Mode (CTR) = uses a stream cipher similar to CFB and OFB, simple incrementing counter
+	3DES = 	triple DES
+		DES-EEE3 mode:first encrypts plain text three times, using K1, K2, K3, key lenght: 168bits long
+		DES-EDE3 mode:C = E(K1,D(K2,E(K3,P))), 2nd op = decrypt, key lenght: 168bits long
+		DES-EEE2 mode:uses 2keys, C = E(K1,E(K2,E(K1,P))), key lenght: 112bits long					
+		DES-EDE2 mode: uses 2 keys and replace encryption in second operation by decryption
+	IDEA = 64-bits block of plaintext/ciphertext  but with a 128-bit key, replace DES, found in PGP
+	Blowfish = similar to DES and IDEA but variable lenght key from 32bits to 448bits
+	SkipJack = 64-bits blocks of text, 80-bits key
+	Rivest Cipher 5 (RC5): by RSA, variable block cipher (32, 64 and 128 bits) and key (between 0 and 2 040 bits)
+	AES: 128 bits blocks (Rindael extends to key lenght), 128bits keys require 10 rounds, 192b > 12r, 256b > 14r 
+	Twofish = 128 bits blocks of data, key up to 256 bits lenght, pre/post-whitening: XOR plain text with subkey
+
+
+
+=======================================================================================================================================================
+=======================================================================================================================================================
+
+Chapitre 7:
+PKI and Cryptography Applications
+
+=======================================================================================================================================================
+
+Asymetric Crypto:
+	RSA = find a number, d, such that (ed-1) mod (p-1)(q-1) = 0 / C = P^e mod n / P = C^d mod n
+	El Gamal: public, double the lenght of any message it encrypts
+	Elliptic Curve: y^2 = x^3 + ax + b / 2 points on an elliptic, P + Q, assumes that Q = x P
+	RSA 1088b key <> DSA with 1024b key <> Elliptic Curve with 160b key
+
+5 requirements for hash function, according to RSA:
+	input can be of any lenght
+	output has a fixed lenght
+	relatively easy to compute for any input
+	one-way
+	collision free (hard to find 2 messages producing same hash value)
+
+SHA = by NIST
+	SHA-1 takes virtually any lenght (real = 2 097 152 TB) produces a 160 bits digest, processes in 512 Bits Blocks
+	SHA-2 has four variants
+			SHA-256 256 bits digest using 512 Bits block
+			SHA-224 truncated version of the SHA-256 to produce 224 bits digest using 512 Bits Block
+			SHA-512 512 bits digest using 1 024 Bits block
+			SHA-384 truncated version of SHA-512
+	SHA-3 = Keccak algorithm
+
+MD2 = 16B processor, by Rivest(RSA) 16B checksum, pad message to 16B multiple, 128b digest
+MD4 = 32B processor, pad message to 512B multiple - 64B, 512b block messsage, 3 rounds, 128b digest
+MD5 = 512b blocks, 4 rounds, 128b digest
+
+Hash of variable lenght (HAVAL) = an MD5 variant, 128,160,192,224,256 bits hash value
+Hash Messaging Authentication Code (HMAC) = partial digital signature, integrity but not nonrepudiation, Variable digest
+
+Digital Signature Standards:
+	NIST: Fed gov use Federal Information Processing Standards FIPS 186-4 : SHA-2
+	DSA as specified in FIPS 186-4
+	RSA as specified in ANSI X9.31
+	ECDSA as specified in ANSI X9.62
+	
+Public Key Infrastructure
+	
+	Certificate contains specific identifying information governed by standard X.509
+		version of X.509 to which the certificate conforms
+		Serial number
+		signature algorithm identifier
+		Issuer name
+		Validity Period
+		Subject's name
+		Subject's public key
+
+	X.509 adopted by Microsoft and Mozilla for SSL
+	
+	Certificates Authorities (CA) = prove your identitfy to the satisfaction of the CA to obtain digital certificate
+	Registration Authorities (RA) = assits CA with the burden of verifying users identities
+	Certification Path Validation (CPV) = each certificate in a path is valid and legitimate
+	Certificate Generation and Destruction
+		Enrollment = prove your identity to the CA	
+		Verification = checking the CA's DS, not in Certificate revocation list CRL
+		Revocation = CA compromised, erroneously issued, details/security association changed, grace period
+
+	
+Applied Cryptography
+	Windows: bitLocker and EFS
+	OSX: Filevault encryption
+	Linux, Windows, MAc: TrueCrypt
+	Pretty Good Privacy PGP: commercial (RSA+IDEA+MD5) or freeware(Dellfie-Hellman+CAST encrypt+SHA-1)
+	S/MIME = mail standard, RSA, support AES and 3DES, relies on X.509, incorporated in Outlook, Thunderbird, OSX
+	SSL = for Web app,HTTPS port 443
+	TLS = for Web app, replacement to SSL, uses TCP port 443, POODLE attack in 2014 on SSL 3.0 > TLS
+	Steganography and Watermarking = makes alterations to the least significant bits of image files, see iSteg
+	DRM (digital Right Movement) = uses CSS, AACS, ADEPT, Vitrium or FileOpen
+	Networking
+		Circuit Ecryption: 
+			link encryption = all traffic, lower level, secure tunnel between 2 points
+			end-to-end encryption = TLS from user to server, SSH, only workload data, higher level
+		IPSec = by IETF, publickey, for VPN, tunnel or transport, paired with L2TP, AH+Encap Sec payload
+		ISAKMP = in RFC 2408, authenticate + create association + key generation + protect
+	Wireless 
+		WEP = 64b or 128b encrypt, IEEE 802.11
+		WPA = integrate TKIP
+		WPA2 = adds AES
+
+Cryptography Attacks
+	Analytic attack = algebric manipulation that tries to reduce the complexity of the algorithm
+	Implementation Attack = exploits the software coden the technology employed to program the encryption system
+	Statistical Attack = exploits statistical weakness (d=floating-pont error, inability of true random numbers)
+	Brute Force = attempts every possible valid combination for a key or password
+	rainbow tables provide precomputed values for cryptographic hashes
+	cryptography salt = a random value added at the end of the password before the OS hash the password
+	Frequency Analysis and Ciphertext Only Attack
+	known plaintext = get plaintext and its ciphertext to compute the algo
+	Chosen Plaintext = attacker encrypt plaintext message and analyse the cipher output
+	Meet in the Middle = plain text is encrypted using any possible key k1 and decrypted using any possible key k2
+	Man in the middle = birthday attack, or collision attack, or reverse hash matching
+	Replay = intercepts encrypted message then later "replays" the captures message to open a new session
+=======================================================================================================================================================
+=======================================================================================================================================================
+
+Chapter 8:
+Principles of Security, Models, Design, capabilities
+
+=======================================================================================================================================================
+=======================================================================================================================================================
+Subject = user or process that makes the request to access a ressource
+Object = ressource that the subject wants to access
+transitive trust: if A trust B and B trusts C, then A trusts C
+
+closed system = work well with a narrow range of other systems, generally from the same manufacturer
+open system = use agreed-upon industry standards
+
+Confinement = restrict action of a program
+	sandboxing = allows a process to read from and write to only certain memory location and resources
+Bounds = each process that runs on a system is assigned a security level
+Isolation = when a process in confined through enforcing access bounds
+
+Access controls types:
+	MAC: static attributes of the subject and the object determine the permissibility of an access
+	DAC: subject has some ability to define the object to access
+	RBAC: rule based access control		
+
+token = separate object that is associated with a resource and describes its security attributes
+capabilities list = row of security attributes for each controlled object
+security label = attribute storage, generally permanent part of the object to which its attached, safeguard against tampering
+Trusted Computing Base (TCB) = only subset portion of info system that can be trusted,  responsible for AC to the system
+Security Parameter = imaginary bounday between TCB and the rest of the system
+trusted paths = TCB secured channels to rest of the system
+Reference Monitor and Security Kernel = part of the TCB, validates access to every resources prior to granted access
+	stands between every subject and object
+
+State Machine model = a system that is secured no matter what state it is in
+	FSM Finite State Machine = combines an external input with an internal machine state to model all kinds of complex systems
+	next state = output = F(current state, input)
+	state = snapshot of a system in a specific point in time
+	transitions = occur when accepting input or producing output, always results in a new state (= state transition)
+
+Information flow model = focuses on the flow of information
+Non interference Model = how the actions of a higher subject affect the system state or actions of a lower subject
+Composition theory = information flows between system: cascading, feddback (reciprocates), hookup (sends input to external entities)
+take-Grant Model = employs redirected graph to dictate how rights can be passed from one subject to another, or to an object
+	take / grant / create / remove
+Access Control Matrix = table of subject and object: column = ACL / row = Capabilities List
+Bell-LaPaluda Model = write up and read down allowed, write down and read up forbidden
+	provides confidentiality but not integrity nor availability
+	simple security property = subject may not read info at higher security level
+	* security property (= confinement property) = subject may not write information to an object at lower sensitivity level
+	Discretionary security property = system uses an access matrix
+Biba Model = inverted Bell model
+	only integrity, no access control managment, doest not prevent covert channels
+	more common choice for commercial organizations
+Clark-wilson Model = uses a three-part relationship subject/program/object (or subject/transaction/object)
+	2 principles: well-formed transactions = programs -> constrained interface / separation of duty
+Brewer and Nash Model ( = Chinese Wall): access controls to change dynamically based on a user's previous activity
+	applies to a single integrated database
+Goguen-Meseguer Model = integrity model, predetermining the set or domain (= list of object that can access a subject)
+Sutherland Model = integrity model, preventing interference in support of integrity
+Graham-Denning Model = focused on secure creation and deletion of both subjects and objects, through an access control matrix
+
+3 main product evaluation models or classification: TCSEC, ITSEC and Common Criteria
+
+Rainbow Series (color of the covers)
+TCSEC Classes and Required Functionnality
+		Cat A: verified protection, highest level = B3, development cycle: phase controlled using formal methods, documented, evaluated, verified
+		Cat B: mandatory protection = more granularity control, based on Bell-LaPaluda, on security labels
+			B1: labeled security = each subject andobject has security labels, grants access by check labels compatibility
+			B2: structured protection = must ensure no covert channels exist, process isolation, operators and admin functions separated
+			B3: security domains = increasing separation and isolation of unrelated process, adressed during initial reboot
+		Cat C: Discretionary protection = basic acces control
+			C1: Discretionary protection = control acces by user ID and/or groups
+			C2: Controlled access protection = users msut be identified individually, enforce data cleansing, strict logon procedures
+		Cat D: Minimal protection
+
+Red Book = interpret TCSEC in networking context
+	uses 4 rating level: None, C1 (= minimum), C2 (= Fair), B2 (= good)
+
+ITSEC Classes and Required Assurance Functionnality
+		target of Evaluation TOE in 2 categories
+			functionnality rated rom F-D to F-B3 (no F-A1)
+			assurance rated from E0 through E6
+
+Common criteria = official standard ISO 15408, based on protecting profiles (PP) and Security targets (ST)
+
+EAL (Evaluate Assurance Level) from 1 through 7
+	EAL1 = Functionnaly tested: due care
+	EAL2 = Structurally tested: evaluating legacy systems, low to moderate levels of independently assured security
+	EAL3 = Methodically tested and checked: when security engineering begin at dev step, moderate level of independently assured securrity
+	EAL4 = Methodically designed, tested and checked: rigorous,positive engineering, independant testing of all TOE security Function (TSF)
+	EAL5 = Semi-formally designed and tested: rigorous engineering, including specialist security techniques, for semi-formal testing, high level of ISA
+	EAL6 = Semi-formally verified, designed and tested: produce a premium TOE
+	EAL7 = formaly verified, designed and tested: only highest risk situation
+
+	TCSEC	ITSEC		CC 		Description
+	D	F-D+E0		EAL0, EAL1	minimal, no protection
+	C1	F-C1+E1		EAL2		discretionary security mechanisms
+	C2	F-C2+E2		EAL3		controlled access protection
+	B1	F-B1+E3		EAL4		labeled security prtection
+	B2	F-B2+E4		EAL5		Structured security protection
+	B3	F-B3+E6		EAL6		Security domains
+	A1	F-B3+E6		EAL7		Verified security design
+
+PCI-DSS = security for electionic payment transactions
+ISO =worldwide standards-setting group
+
+Certifications = first phase of total evaluation process
+accreditation = formal declaration by the Designated Approving Authority DAA
+
+Risk Management Framework RFM replace the DoD information assurance Certification and Accreditation Process DIACAP
+	4 phases:	1. Definitions: creation of System Security Authorization Agreement SSAA
+			2. Verification: refinement of the SSAA, recommandation to the DAA, and DAA accreditation's decision
+			3. Validation: refinement of the SSAA, recommandation to the DAA, and DAA accreditation's decision
+			4. Post-Accreditation: include maintenance of the SSAA
+
+
+=======================================================================================================================================================
+
+Chapter 9:
+Security Vulnerabilities,threats and countermeasures
+
+=======================================================================================================================================================
+=======================================================================================================================================================
+execution type:
+multitasking = handling 2 or more task simultaneously
+multiprocessing = a multiprocessor computing system harnesses the power of more than one processor to complete the execution of a single application
+Massively Paralelle Processing MPP = systems house hundred or thousands of processors, each with its own OS
+Multiprogramming = similar to multitasking, a way to batch or serialize multiple processes, normally coordinates by the OS
+Multithreading = multiple concurrent task to be performed within a single process
+	thread = self-contained sequence of instructions that can execute in parallele, and are part of the same parent process
+
+processing type:
+Single State = require use of policy mechanism to manage information at different level
+Multistate = certified to handle multiple security levels simultaneously
+
+Protection Mechanisms:
+Protection Rings = organize code and components in an OS into concentric rings
+	ring 0 (OSKernel/Memory) is the highest level of priviledge (kernel is the part of the OS that always resides in the memory)	
+	ring 1 houses other part of the OS
+	ring 2 where I/O drivers, protocols and system utilities reside
+	ring 3 for applications and programs
+
+	ring 0-2 runs in supervisory or privileged mode
+	ring 3 runs in user mode
+Process state (= operating state) = various form of execution in which a process can run
+	supervisor state = privilege, all access mode
+	problem state = associated with user mode
+
+	Processing queue = processes line up for execution in OS
+		time slice = chunk of processing time
+
+	Ready = process is ready (= has all memory and other resources it needs) to resume or begin processing as soon as it is scheduled
+	Waiting (=blocked) = ready for continued execution but is waiting for a device or access request to be serviced
+	Running = executes on the CPU and keep going until it finishes, its time slice expires, or is blocked for some reason
+	Supervisory = process must perform an action that requires greater privileges
+	Stopped = process finishes or must be terminated (an error occurs, a required resource is not available)
+
+new processes always transition into ready state
+ready processes always transition into running state
+
+Mode		Clearance	Need to know	PDMCL (Process Data from Multiple Clearance Level)
+Dedicated	Same		None		None
+System High	Same		Yes		None
+Compartmented	Same		Yes		Yes
+Multilevel	Diferrent	Yes		Yes
+	
+Operating Mode
+	User mode = basic mode:	CPU allows the execution of only a portion of its full instruction set, often VM and virtual subsystem machine
+	Privilege Mode = give the OS access to the full range of instructions supported by the CPU
+		= Privilege mode = Supervisory mode = system mode = Kernel mode
+
+Memory
+	ROM: read but can't change, no writing allowed, burn at factory, bootstrap info on startup, includes POST
+	PROM: allows end user to burn chip's contents later, no further change possible, used on custom HW app
+	EPROM: small windows that, when illuminated with a special violet light erase the content or the chip
+	EEPROM: electric voltages delivered to the pin forces erasure
+	Flash Memory: similar to EEPROM, but can be written in blocks or page
+	
+	RAM = = main memory = primary memory: when computer is off, all data stored in RAM disappears
+	Cache RAM = take data from slower devices and temporarily stores it in faster devices
+		dynamic = capacitors, loses their charge overtime that can alter memory, needs CPU overhead for periodic operations
+		static = use flip-flop as on/off switch, no need for periodic operations, more expensive
+
+Memory adressing
+	Registers = limited amount of memory onboard the CPU, that is used by ALU Arithmetic Logical Unit
+	Immediate Adressing = a way of referring to data that is supplied to the CPU as part of an instruction
+	Direct Addressing = provides the CPU the actual address to the memory location to access
+	Indirect Addressing = the memory address contains another memory address
+	Base+Offset addressing = uses a value in one of the CPU's registers as base location and add the offset
+
+Secondary Memory = magnetic, optical, flash-based media
+	paging = reads the data from disk back into real memory
+	memory functions in nanoseconds, disk in milliseconds
+
+Memory Security Issues
+	memory retention issues = delete or erase all ROM,PROM,EPROM,secondary memory
+	RAM could retain some of their charge for a limited period in time...
+	attack can freeze memory chips to delay the decay or resident data
+	most important issues is to control who may access data stored in memory while a computer is in use
+
+Storage
+	Primary memory = primary storage = RAM
+	Secondary storage =  secondary storage = long term storage device
+	Volatile = lose data when power off
+	Nonvolatile = dont lose data when power off
+	Random (storage access) = allow OS to read and write immediately from any point within the device, using adressing system
+	Sequential = require to read all the data physically stored prior to the desired location
+
+Storage media security
+	data remanence = data remain on secondary storage device after it has been erased
+	sanitizing = use specialized utilities to destroy all trace of data on the the device, or damage or destroy it beyond possible repair
+
+Input and Output device
+	Monitors: shoulder surfing or TEMPEST vulnerability < electronic emanation (> Van Eck phreaking)
+	printers: exposed to network, store data locally (often Harddrive)
+	Modems: can create alternate egress channel
+
+Input/Output Structures
+	Memory mapped I/O
+	IRQ Interrupt Request = assigning specific signal lines to specific device through special interrupt controller
+		older PC: 0-16 with 2 cascaded 8-line interrupt
+		newer PC: 0-23 with 3 cascaded 8-line interrupt
+
+Client Based
+	Applets	= code objects are sent from a server to perform some actions on the client
+	Java applets = platform-dependant programming language developed by Sun Microsystems, create sandbox concept; implement JVM
+	ActiveX Controls = Microsoft aswer to Java, use: Visual Basic, C, C++, Java, no sandbox
+	Local Cache = anything temporarely stored on the client for future use, ARP cache, DNS cache, Internet Files cache
+ARP
+	ARP used to resolve an IP address into the appropriate MAC address
+	ARP poisoning = respond to ARP broadcast queries in order to send back falsified replies
+	static ARP are permanenet to reboot
+HOST Poisoning
+	HOSTS files = static file found on TCP/IP supporting system that contains hardcoded references for domain names and associated ip adresses
+	admin or hackers can add relationship from FQDN Fully Qualified Domain Name and IP address
+	DNS query Spoofing = eavedrop's on a client's DNS queries, then send client false information
+
+Server-Based
+	Aggregation = combine records from multiple tables
+	aggregation attacks = collect numerous low-level security items and combine to create something of a higher security level or value
+	Inference = use human mind's deductive capability rather than raw mathematical ability of modern database platform
+	Data mining and Data Warehousing = allow analysts to comb though data warehouse and look for potential correlated information
+	Grid Computing = form of paralleled distributed processing
+
+essential security protection mechanisms
+Layering = implement a structure similar to ring model for operating mode and apply it to each operating system process
+Abstraction = users just need to know the detail of the box but only the proper syntax for using the object, based of object-oriented programing
+Data Hiding = assures that data existing on a security level is not visible to process running at a different security level
+Process Isolation = requires that OS provide separate memory locations for each processs instructions and data
+
+Common Architectue Flaws and Security Issues
+Covert Channels	= method to pass information over a path that is not normally used for communication
+Covert Timing Channel = conveys information by altering the performance of a system component or modifying a resource's timing in a predictable manner
+Covert Storage Channel = conveys information by writing data to a common storage area where another process can read it
+called backdoor or maintenance hook = avoid security measures by design
+Initialization and Failure States = many systems unload the security measures as part of their shutdown procedures
+data diddling = attacker gains acces to a system and make small, random, incremental change to data
+salami attack = very small amounts are deducted from assets from balances regularly and routinely
+TOCTOU attack or race conditions = difference between TOC and TOU is sometimes large enough ofr an attacker to replace the original object with another
+
+
+
+
+============================================================================================================
+
+Chapter 10
+Physical Security Requirements
+
+============================================================================================================
+critical path analysis = systematic effort to identify relationship between mission-critical applications processes and operations and all the necessary supporting elements
+Administrative physical security controls = facility construction and selection,site management, personel control, awareness training, emergency response and procedure
+Technical physical security control = access controls, intrusion detection, alarms, colsed-circuit television (CCTV), monitoring, heating, ventilating, and air conditioning HVAC
+
+Functionnal order: deterrence / denial / detection / delay
+
+Power issues:
+	fault = momentary loss of power
+	blackout = complete loss of power
+	sag = momentary low voltage				
+	brownout = prolonged low voltage
+	spike = momentary high voltage
+	surge= prolonged high voltage
+	inrush = initial surge of power associated with connecting to a power source
+	noise = steady interfering power disturbance or fluctuation
+	transient = short duration of line noise disturbance
+	clean = non fluctuating pure power
+	ground = a wire in an electrical circuit that is grounded
+
+Temperature Humidity and Static
+	Static voltage	Possible damage
+	40		sensitive circuit
+	1000		scrambling monitor display
+	1500		destruction of data stored on hard drives
+	2000		abrupt system shutdown
+	4000		printer jam or component damage
+	17000		permanent circuit damage
+
+Fire extinguisher classes:
+	A 	common combustibles	Water, soda acid
+	B	Liquids			CO2, Hallon, Soda Acid
+	C	Electrical		CO2, halon
+	D	Metal			Dry Powder
+
+
+============================================================================================================
+
+
+============================================================================================================
+
+Chapter 11
+Secure Network Architecture and Securing Network components
+
+============================================================================================================
+OSI functionnality
+	7.Application	
+	6.Presentation
+	5.Session
+	4.Transport				
+	3.Network
+	2.Data Link
+	1.Physical
+
+OSI Layers
+1. Physical Layer 
+	EIA/TIA-232 and EA/TIA-449
+	X.21
+	V.24 and V.35
+2. Data Link	
+	Ethernet (IEEE 802.3) / Token Ring (IEEE 802.5)
+	Asynchronous Transfer Mode (ATM) / Fiber Distributed Data Interface (FDDI) / Copper DDI (CDDI)
+	MAC = 6 bytes (48 bits) writtent in hexadecimal rotation: 00-13-02-1F-58-F5
+		OUI Organizationally Unique Identifier = first 3 denote vendor or manufacturer: 00-13-02
+			EUI-48: adds 2 octets between the OUI and the unique NIC: cc:cc:cc:FF:FF:ee:ee:ee
+	ARP Address Resolution Protocol: used to resolve IP address using MAC addresses
+	RARP Reverse Address REsolution Protocol: resolve MAC address into IP address
+
+3. Network Layer: packets
+	protocol:
+		ICMP Internet Control Message Protocol
+		RIP Routine Information Protocol
+		OSPF Open Shortest Path First
+		BGP Border Gateway Protocol
+		IGMP Internet Group Management Protocol
+		IP Internet Protocol
+		IPsec Internet Protocol Security
+		IPX Internet  Packet Exchange (Novell Netware, part of IPX/SPX protocol)
+		NAT Network Address Translation
+		SKIP Simple Key Management for Internet Protocol
+		nonIP protocol: IPX, Appletalk (by Apple in 1984) and NetBEUI (NetBIOS Extended User Interface)
+
+4. Transport Layer: segment or datagram
+	protocols:
+		Transmission control Protocol TCP
+		User Datagram Protocol UDP
+		Sequenced Packet Exchange SPX
+	SSL / TLS
+
+5. Session Layer: PDU Protocol/payload/packet Data Unit
+		-simplex (one way direction)
+		-half duplex (2 way but only one direcion at a time)
+		-full duplex (2 way, both direction at a time))
+	Protocols:
+		NFS Network file System
+		SQL Structure Query Language
+		RPC Remote Procedure Call
+6. Presentation Layer
+	encryption and compression
+	Formats
+		ASCII American Standard Code for Information Interchange
+		EBCDICM Extended Binary-Coded Decimal Interchange Mode
+		TIFF Tagged Image File Format
+		JPEG Joint Photographic Expert Group
+		MPEG Moving Picture Expert Group
+		MIDI Music Instrument Digital interface
+
+7. Application Layer
+	hardware:	
+		gateway	(serves as protocol translation tool)
+		Application layer firewall
+	application-specific protocol:
+		HTTP Hypertext Transfer Protocol
+		FTP File Transfer Protocol
+		LPD Line Print Deamon
+		SMTP Simple Mail Transfer Protocol
+		Telnet
+		TFTP Trivial File Transfer Protocol
+		EDI Electronic Data Interchange
+		POP3 Post Office Protocol v3
+		IMAP Internet Message Access Protocol
+		SSNMP Simple Network Management Protocol
+		NNTP Network News Transport Protocol
+		S-RPC Secure Remote Procedure Call
+		SET Secure Electronic transaction 
+
+
+TCP/IP Model (or DOD or DARPA): 4 layers
+	Application <> Application+Presentation+Session
+	Transport (= host to host) <> Transport
+	Internet (= internetworking) <> Network
+	Link (= network interface/network access) <> Physical+Data Link
+
+	Layer:		Protocols:
+	Application	FTP / Telnet / SNMP / LPD / TFTP / SMTP / NFS / XWindows
+	Transport	TCP / UDP
+	Internet	ICMP / IGMP / IP
+	Link		Ethernet / Fast Ethernet / Token Ring / FDDI
+
+	VPN linked are encrypted, use the PPTP, L2TP, and IPsec
+	TCP wrappers = basic firewall based on user IDs and system IDs, = form of Port Based Access Control
+	
+Transport Layer Protocol
+	have each 65 536 ports (16-digits binary number)
+	ports 0-1023 called well-known ports or service ports (standardized assignement)
+		port 80 = standardized for HTTP
+		port 23 = telnet
+		port 25 = SNMP
+	ports 1024-49151: registered software ports (registered with IANA)
+	ports 49152-65535: random, dynamic, or ephemeral ports
+
+	TCP
+		operates at layer 4
+		full-duplex
+		connection oriented (handshake process)
+		support reliable sessions
+		segments of TCP are tagged with sequenced number
+
+		Handshake process:
+		1. Client sends a SYN (synchronize) flagged packet to the server
+		2. Server responds with SYN/ACK flagged packet back to the client
+		3. Client respond with ACK
+
+		2 methods for ending:
+			use of FIN (finish) flagges packets instead of SYN
+			use RST (reset) flagged packet
+
+		TCP header = 20 to 60 bytes
+		16bits		Source port
+		16bits 		Destination port
+		32bits		Sequence number
+		4		Data offset
+		4		Reserved
+		8		Flags
+		16		Window size
+		16		Checksum
+		16		Urgent pointer
+		Variable	Options, must be pultiple of 32bits
+
+	UDP
+		operates at layer 4
+		connectionless 'best effort' communications protocol
+		no error detection or correction, no sequencing, no flow control, no preestablish session, unreliable
+		IP header protocol field value for UDP: 0x11 (17)
+		UDP header = 8bytes
+			source port
+			destination port
+			messag lenght
+			checksum
+
+	IP
+		operates at Network layer (layer 3)
+		provides route addressing for data packets
+		connectionless,unreliable datagram service	
+		IP classes
+		Class	First Binary Digits	Decimal Range of First Octet
+		A	0			1-126
+		B	10			128-191
+		C	110			192-223
+		D	1110			224-239
+		E	1111			240-255	
+
+		IP classes default subnet mask
+		Class	Default subnet Mask	CIDR Equivalent
+		A	255.0.0.0		/8
+		B	255.255.0.0		/16
+		C	255.255.255.0		/24		
+
+	ICMP
+		utilized by ping, traceroute, pathping
+			exploited in bandwidth based DoS attacks: ping of death, smurf attacks and ping floods
+			ping of death: sends a larger than 65535bytes 
+			smurf attack: enormous amounts of traffic on a target network by spoofing broadcast pings
+			ping floods: classic DoS attack
+				
+Common Application Layer Protocols
+	telnet port 23
+	FTP port 20 and 21
+	TFTP, UDP port 69
+	SMTP, TCP port 25
+	POP3, TCP port 110
+	IMAP, TCP port 143
+	DHCP, UDP port 67 and 68
+	HTTP, TCP port 80
+	SSL, TCP port 443 (for HTTP encryption)
+	LDP, TCP Ports 515
+	X Windows, TCP ports 6000-6063
+	BootP/DHCP, UDP port 67and 68
+	NFS, TCP port 2049
+	SNMP, UDP port 161 (162 for trap messages)
+
+TCP/IP vulnerabilities
+	buffer overflows, SYN flood, DoS, fragment, oversized packet, spoofing, man-the-middle, hijack, coding error
+	network monitoring: monitoring traffic patterns to obtaininformatino about a network
+	packet sniffing: capturing packets to extract usefull information like usernames, passwords,...
+
+Domain Name Resolution
+	third, or bottom, layer: MAC address = permanent physical address
+	second, or middle: IPaddress = temporary logical adress
+	first, or top: domain name = temporary  human-friendly convention assigned name
+	use DNS/DNS reserve lookup and ARP/RARP, Kamininsky DNS vulnerability
+
+Wireless Network
+Amendements	Speed		Frequency
+802.11		2Mbps		2.4 GHz
+802.11a		54Mbps		5 GHz
+802.11b		11Mbps		2.4 GHz
+802.11g		54Mbps		2.4 GHz
+802.11n		200+ Mbps	2.4 GHz or 5 GHz
+802.11ac	2Mbps		5 GHz
+
+Wireless Channel: 11 channel in US, 13 in EU, 17 in Japan
+
+2 methods of authentifcation:
+	OSA (Open System Authentication) = no real authentication
+	SKA (Shared Key Authentication) = some of authentication must take place
+		defines WEP (Wired Equivalent Privacy), later: WPA and WPA2
+WEP
+	defined by IEEE 802.11 standard
+	employs Rivest Cipher 4 (RC4), a symmetric stream cipher
+
+WAP (Wifi Protected Access)
+	replacement of WEP
+	802.11i defined WAP
+	similar to IPsec
+	based on LEAP and TKIP encryption, often use passphrase (abused by brute force)
+
+WAP2
+	amended by 802.11i
+	Counter Mode Cipher Block Chaining Message Authentication Code Protocol (CCMP)
+ 	based on AES encryption scheme
+
+General Wi-Fi Security Procedure
+	1. Change default administrator password
+	2. Disable SSID broadcast
+	3. change SSID to something unique
+	4. enable MAC filtering (when few clients only)
+	5. Consider using static IP address or DHCP with reservation
+	6. turn on highest form of authentication and encryption supported (currently WPA2)
+	7. treat wireless as remote accces, and manage access using 802.1X
+	8. treat wireless as external access, and separate WAP from the wired network using a firewall
+	9. treat wireless as an entry point for attackers, and monitor all the WAP-to-wired-network communications with an IDS
+	10.require a VPN link (encryption between all wireless clients and WAPs)
+
+Firewall
+	Static-Packet filtering firewalls = filters traffic by examining data from a message header
+	Application-level Gateway Firewalls = proxy firewalls = operate at application layer
+	Circuit-level Gateway Firewalls = circuit proxies = establish communication sessions between trusted partners
+	Stateful Inspecion Firewall = dynamic packet filtering firewall
+		examines source/dest, app usage, source of origin, relationship between current and previous packet
+		operates at layer 3 and 4 (Network and Transport)
+
+Firewall deployment architecture
+	single tier
+		internet -- router -- firewall -- Private network
+
+	two tier I
+		internet -- router -- firewall --- Private network
+						|		
+						-- DMZ
+	two tier II
+		internet -- router -- firewall -- DMZ -- Firewall -- Private network
+
+	three tier I
+		internet -- router -- firewall -- DMZ -- Firewall -- Transaction Subnet -- Firewall -- Private network
+
+	Three tier II
+		internet -- router -- firewall -- Transaction Subnet -- Firewall -- Private network
+						|		
+						-- DMZ	
+Hardware:	
+OSI layer 1
+Repeaters, concentrators and amplifiers = stregthen the communication signal over a cable segment
+Hubs = connect multiple systems and network segments that use the same protocol, repeat inbound over all outbound port
+
+OSI layer 2
+Bridges = connect 2 different networks that use the same protocol
+	may use buffer in case of different speed network = store and forward device	
+Switches = switch repeats traffic only to the ports on which the destination is known to exist				
+OSI layer 3									
+Routers = control traffic flow and connect similar networks
+	routing tables or dynamic routing system
+	routing protocol: RIP, OSPF, BGP
+Brouters = combines router and bridge
+
+OSI Layer 7				
+Gateways = protocol translators
+Proxies	= form of gateway that does not translate across protocols
+	serve as mediators, filters, chaching servers, and even NAT/PAT servers for a network
+	use NAT (Network Address Translation)
+
+LAN extenders
+	= remote access, multilayer switch used to connect distant networks over WAN links
+	= WAN switch or WAN router
+
+Modems
+	communications device that covers or modulates between an analog carrier signal and digital information
+
+Cabling:
+5-4-3 Rule = between any 2 nodes, there can be a maximum of 5 segments connected by 4 repeater/concentrators, only 3 of those segments can be populated
+
+Ring: connects each system as points in a circle
+dual loop = bidirecionnal and avoid SPOF
+
+Bus Technologie: connects each system to a trunk or backbone cable, collision avoidance mechanism 
+Ethernet = bus-based techno
+
+Star Topologie: employs a centralized  connection device (= switch or hub)
+
+Mesh Topologie:	connects systems to other systems using numerous paths
+
+
+Wireless Communications and Security
+Frenquency Hopping Spread Spectrum (FHSS) = transmit data in series while constantly changing frequence of use
+Direct Sequence Spread Spectrum (DSSS) = employ all available frequencies simultaneously in parallele
+Orthogonal Frequency-Division Multiplexing (OFDM) = uses a digital multicarrier  modulation scheme
+
+Cell Phones
+CALEA mandates that telco must make it possible to wiretap voice and data > no encryption allowed
+secure link is established using WAP/WTLS, data is converted into clear and reencapsulated in SSL, TLS, IPsec
+
+Blutooth (802.15) at 2.4GHz
+
+LAN Media Access
+Carrier-Sense Multiple Acces (CSMA): 2. is not used, host transmits communication / 3. host wait for aknowledgement
+
+CSMA / Collision Avoidance (CSMA/CA): 3. if permission is not granted in a time-out period, host starts over at step 1
+	requires designation of a master or primary system to responds requests and grants permission
+	ex.: appletalk and 802.11 wireless networking
+
+Carrier-Sense Multiple Access with Collision Detection (CSMA/CD) (ethernet)
+	3. while transmitting, hosts listens for collisions
+	4. if collision is detected, hosts transmist a jam signal
+	ex.: ethernet
+
+Token Passing
+	Lan acces media techno that performs communication usin a digital token
+
+Polling
+	master-slave configuration
+	master polls each secondary system in turn whether they have a need to transmit data
+	ex.: SDLC (Synchronous Data Link Control)
+	= opposite to CSMA/CA, where slave ask for permission
+
+============================================================================================================
+
+============================================================================================================
+
+Chapter 12
+Secure Communications and network attacks
+
+============================================================================================================
+
+============================================================================================================
+
+	Secure Communications Protocols
+
+		SKIP (Simple Key Management for Internet Protocol)
+			layer 3
+			encryption tool to protect sessionless datagram protocol
+			designed for IPsec but can encrypt any subprotocol of TCP/IP, 
+			replaced by IKE (Internet Key Exchange) in 1998
+		
+		swIPe (Software IP encryption)
+			layer 3
+			encapsulation protocol for CIA
+
+		S-RPC (Secure Remote Procedure Call)
+			authentication service
+			prevent unauthorized execution of code on remote systems
+
+		SSL (Secure Socket Layer)
+			encryption tool developed by Netscape to protect communication between web server and web browser
+			session-oriented protocol that provides Integrity and confidentiality
+			use 48bit key or 128bit key
+			superseded by TLS (Transport Layer Security)
+
+		TLS (Transport Layer Security)
+			stronger authentication and encryption protocol than SSL
+			support secure client-server communication, preventing spoofing, eavedropping, tampering 
+			support one-way authentication and two-way authentication using digital certificates
+			often implemented as the initial payload of a TCP package
+			can be implemented at lower layer, such layer 3, to operate as a VPN: OpenVPN
+			can encrypt UDP and session initiation protocol (SIP, associated to VoIP)
+		
+		SET (Secure Electronic Transaction)
+			security protocol for transactions over internet
+			based on RSA and DES
+			SSL/TLS encrypted sessions are the preferred mechanism for secure e-commerce
+
+	Authenticaton Protocol
+		
+		CHAP (Challenge Handshake Authentication Protocol)
+			used over PPP (Point to Point Protocol) link
+			encrypts usernames and passwords
+			use a challenge-response dialogue that cannot be replayed
+			periodically reauthenticates the remote system
+
+		PAP (Password Authentication Protocol)
+			standardized authentication protocol for PPP
+			no encryption of usernames and passwords
+			provide a means to transport the logon credentials from the clients to the authentication server
+
+		EAP (Extensible Authentication Protocol)
+			more like a framework for authentication than a protocol
+			allows customized authentication security solutions (smart cards, tokens,biometrics)
+
+
+Voice over Iternet Protocol (VoIP)
+		VoIP encapsulates audio into IP packets
+		potential attacks:
+			Caller ID can be falsified > viphing (VoIP fishing) or SPIT (Spamm over Internet Telephony)
+			Call manager systems and VoIP phones vulnerable to host OS and DoS attack
+			Spoofing call manager or endpoint connection negotiations > man-in-the-middle
+			deploying VoIP on the same switch as servers and desktop servers > 802.1X authentication falsification / VLAN and VoIP hopping
+			decoding VoIP traffic when it's encrypted
+
+Secure Multipurpose Internet Mail Extensions (S/MIME)
+		authentication through X.509 digital certificates
+		encryption through PKCS (Public Key Cryptography Standard)	
+		provide:
+			signed message: integrity, sender authentication and nonrepudiation
+			enveloped message: integrity, sender authentication and confidentiality
+
+MIME Object Security Services (MOSS)
+	CIA and nonrepudiation
+	MD2 and MD5 algorithms
+	RSA public key and DES 
+
+Privacy Enhanced Mail (PEM)
+	CIA and nonrepudiation
+	RSA DES and X.509
+
+Domain Keys Identified Mail (DKIM)
+	verification of domain name identity > mail sent by an organization
+
+Pretty Good Privacy (PGP)
+	private key system to encrypt files and messages
+	v1: RSA algo / 	v2: IDEA algo
+	= not standard but independently developed product
+			free: GnuPG
+
+	Plan Remote Access Security
+		
+		Remote connectivity Technology: 
+			each type of connection has its unique security issue
+			include DSL, ISDN, wireless networking, satellite, and cable modems
+		
+		Transmission protection: 
+			encrypted protocol, connection system, network services or applications
+			include VPNs, SSL, TLS, Secure Shell, IPSec, L2TP				
+
+		Authentication Protection
+			Password Authentication Protocol (PAP)
+			CHAP, EAP, LEAP, PEAP, RADIUS
+			Terminal Access Controller Access Control System Plus (TACACS+)
+			
+		remote User assistance
+			Network Access Control (NAC)
+			use of callback and caller ID:
+				callback: disconnect a remote user upon initial contact and immediatly attemps to reconnect to them using a predefined phone number (= number defined in the user account's security database)
+				Caller ID: potentially verifying the physical location of the authorized user
+
+Dial-Up Protocol
+	secure authentication is needed, adding option for data encryption is preferred
+	PPP and SLIP provide link governance, for dial-up and some VPN links
+		PPP = full duplex protocol used for transmitting TPC/IP packets over various non-LAN connections (modem, ISDN, VPN, Frame relay...)
+		protected by CHAP and PAP
+		= replacement for SLIP, can support any LAN protocol, not just TCP/IP
+
+	SLIP = Serial Line Internet Protocol
+		older techno to support TCP/IP over asynchronous serial connections (as serial dial-up or modem dial-up)
+		support only IP
+		require static IP addresses
+		no error detection or correction, no compression
+
+	MNP = Microsoft Networking Protocol
+		found in Microcom modem in the 1990s
+		own form or error control called Echoplex
+
+Centralized Remote Authentication Services
+	add layers of security between remote user and private network
+	ex.: TACACS+ and RADIUS
+		provides seperation of the authorization and authentication process for remote clients
+
+	RADIUS
+		remote access user passes user dial-up logon credential to the RADIUS server for authentication
+		similar to domain clients sending logon credential to a domain controller for authentication
+
+	TACACS
+		= alternative to RADIUS
+		3 versions: TACACS, Extended TACACS (XTACACS) and TACACS+
+		XTACACS provide separate process for authentication, authorization and accounting
+		TACACS+ improve XTACACS, most current and relevant version
+
+Virtual Private Network
+	= communication tunnel that provide point-to-point transmission of both authentication and data traffic over an intermediary untrusted network
+	commonly associated with establishing secure communication paths through the internet between two distant network
+	can link 2 network or 2 individual systems
+
+	Tunneling
+		= network communication process that protects the contents of protocol packets by encapsulating them in packets of another protocol
+		virtual path exist between the encapsulation and deencapsulation entities
+		can be used if the primary protocol is not routable and to keep the total number of protocol supported on the network to a minimum
+		ex.: sending a letter, access a website through SSL or TLS connection, VoIP
+
+		but:
+		creates larger packets or more packets, can saturate a network
+		point to point communication, don't handle broadcast traffic
+		makes difficult to monitor the traffic
+
+	How VPN Works
+		can be established over any other network communication connections
+		acts like a typical direct LAN cale connection (only difference: speed)
+		can connect 2 individual systems or 2 entire networks
+		data only protected in the VPN tunnel
+		remote access server and firewall act as a endpoint and starting point for VPN
+		
+	Common VPN protocols
+		software or hardware solution
+		layer 2: PPTP, L2L, L2TP 
+		IPsec
+		PPTP and IPsec are limited for use on IP networks
+		SSL/TLS can also be used as a VPN protocol
+		
+		Point-to-Point Tunneling Protocol (PPTP)
+			developed from PPP
+			operates at layer 2
+			used on IP networks
+			create a Point-to-Point tunnel and encapsulates PPP packets
+			support same authentication protocol than PPP: MS-CHAP, CHAP, PAP,EAP, SPAP
+			initial tunnel initiation process is not encrypted > abused by interception
+			often replaced by L2TP,which use IPsec which use traffic encryption for VPN
+
+		Layer 2 forwarding Protocol and Layer 2 Tunneling Protocol
+			L2F, developed by Cisco
+				mutual authentication tunneling mechanism
+				does not offer encryption
+				not widely deployed and replaced by L2TP
+
+			L2TP derived by combining L2T and PPTP
+				creates a point-to-point tunnel
+				relies on IPsec for encryption (commonly used)
+				support TACACS+ or RADIUS	
+
+		IP Security Protocol
+			IPsec = most common protocol used
+				= stand alone VPN protocol and the security mechanism of L2TP
+				used only for IP traffic
+				provides encryption and secured authentication
+				2 primary components:
+					authentication Header (AH): authentication, integrity and nonrepudiation
+					Encapsulating Security Payload (ESP): 
+						layer 3
+						transport mode: only encrypt IP packets data, not the header
+						tunnel mode: entire IP packet encrypted + new header added 
+
+Switching Technologies
+	
+	Circuit Switching
+		= originally developed to manage the telephone calls over public switched telephone network
+		dedicated physical pathway is created between the 2 communicating parties
+		once call establish, path remain the same during the communication
+
+		Real-world circuit switching = POTS and PSTN, gone with digital switching and VoIP
+
+	Packet Switching
+		communication or message broke into small segment (usually fixed-lenght packets) sent accross intermediary networks to destination
+		each segment has a header with source and destination
+		
+		Cicuit Switching	vs	Packet Switching
+		Constant traffic		Bursty Traffic
+		Fixed known delay		Variable Delays
+		Connection oriented		Connectionless
+		Sensitive to connection loss	Sensitive to data loss
+		Used primarely for voice	Used for any type of traffic
+
+	Virtual Circuits
+		= communication paths
+		= logical pathway or circuit created over a packet-switches network
+		
+		Permanent virtual circuits (PVC)
+			= dedicated leased line
+			can be closed when not in use, but instantly reopned whenever needed
+		Switched Virtual Circuits (SVC)
+			= dial-up connection, virtual circuit is created using best paths currently available
+			packets may use diffent SVC from source to destination
+
+WAN Technologies
+
+	Fault tolerance < deploy 2 redundant connections, from possibly 2 different telco or service provider	
+
+	dedicated line: (= leased line or point-to-point link)
+		link between the customer's LAN and dedicated WAN is always open and established
+		connected 2 specific endpoints and only those two endpoints
+		cost based on distance
+
+		ex.:
+		Techno					Connection Type		Speed
+		Digital Signal Level 0 (DS-0)		Partial T1		64Kbps to 1.544 Mbps
+		Digital Signal Level 1 (DS-1)		Partial T1		1.544 Mbps
+		Digital Signal Level 3 (DS-3)		Partial T3		44.736 Mbps
+		European digital transmission format 1	E1			2.108 Mbps
+		European digital transmission format 3	E3			34.368 Mbps
+		Cable modem or Cable routers					10+ Mbps
+
+	WAN Connection Technologie
+		border device = channel service unit / data service unit (CSU/DSU)	
+			contains data terminal equipment/data circuit-terminating equipment (DTE/DCE) = connection point for the LAN's router  (DTE) and WAN carrier network's switch (DCE)
+		CSU/DSU acts like a translator, store and forward device
+		carrier networks, or WAN connection technology: X.25, Frame Relay, ATM, SMDS
+
+		X.25 WAN connection
+			= older packet-switching technologie, widely used in europe
+			permanent virtual circuit
+			predecessor to Frame Relay
+			lower performance and throughput compared to Frame Relay and ATM
+
+		Frame Relay Connections
+			packet switching techno, use PVC
+			supports multiple PVC over a single WAN carrier service connection
+			layer 2 connection mechanism
+			requires use of DTE/DCE at each connection point
+			customer owns DTE, provider owns DCE
+			cost based on the amount of data transfered 
+			CIR (Commited Information Rate) = guaranteed minimum bandwidth by provider
+				may by overthrow over short intervals: bandwidth on demand
+			
+		ATM (Asynchronous Transfer Mode)
+			= cell-switching WAN communication techno
+			connection-oriented packet-switching techno
+				fragments communication into fixed-lenght 53-bytes cells > very efficient and high thoughput
+			use either PVC or SVC	
+			
+		SMDS (Switched Multimegabit Data Service)
+			= connectionless packet-switching technologie
+			connect multiple LAN to form a metropolitan area network (MAN)
+			support high speed bursty traffic and bandwidth on demand
+			= forerunner to ATM
+
+	Specialized Protocol
+			
+		SDLC (Synchronous Data Link Control)
+			permanent physical connections of dedicated leased lines for mainframes
+			use polling
+			layer 2
+			bit-oriented synchronous protocol
+		
+		HDLC (High Level Data Link Control)
+			refined SDLC for serial synchronous connections
+			supports full duplex communications and both point-to-point and multipoint connections
+			use polling
+			layer 2
+			flow control and error detection and correction
+
+		HSSI (High Speed Serial Interface)
+			= DTE/DCE interface standard
+			defines how routers and multiplexors connect to high-speed network carrier services (as ATM or Frame Relay)
+			layer 1
+
+	Prevent or Mitigate Network Attack
+		
+		DoS and DDoS
+			preventing legitimate activity on a victimized system
+				attack exploiting a vulnerability in HW or SW
+				attack that flood the victim's communication pipeline with garbage network traffic
+			
+			most DoS employ intermediary system (usually unwilling and unknowing participant) to hide attacker from the victim
+			bots, zombies or agents = remote-control tools installed onto secondary victim systems
+			attacks involving Zombies = Distributed DoS (DDoS)
+			
+			countermeasures:
+				add firewalls routes and IDS that detects DoD
+				maintain contact with provider, to request filtering services when DoS occurs
+				disable echo replies on external systems
+				disable broadcast features on border systems
+				block spoofed packets from entering or leaving the network
+				keep systems updated
+				consider commercial DoS protection/response
+					Cloudflare's DDoS mitigation or Prolexic
+
+		Eavesdropping
+			= listen communication traffic to duplicate it
+			usually requires a physical acces to implement a physical device or extraction program
+			often facilitated by sniffer (traffic capture or monitoring program, or protocol analyzer system)
+			difficult to detect < =passive attack
+			tools ex.: wireshark, Netwitness, T-Sight, Zed Attack Proxy, Cain and Abel
+			
+			countermeasures:
+				physical access security
+				encryption
+				one-time authentication methods
+				
+		Impersonation/Masquerading
+			=  act of pretending to be someone or something you are not
+			usually implies that authentication credentials have been stolen of falsified
+			different from spoofing (false identitty without any proof)
+
+			countermeasure:
+				one-time pads
+				token authentications, using Kerberos
+				using encryption to increase difficulty of extracting authentication
+
+		Replay Attack
+			= reestablish a communication session by replaying captured trafic against a system
+			
+			countermeasures:
+				one-time authentication
+				sequenced session identification
+
+		Modification Attack
+			captured packets are modified and played against a system
+			modified packets are designed to bypass restrictions
+		
+			countermeasures:
+				digital signature
+				packet checksum
+
+		Address Resolution Protocol Spoofing
+			tools: Ettercap, Cain&Abel, arpspoof
+			provides false MAC adress for requested IP-addressed systems to redirect address to alternate destinations
+			often an element of man-in-the-middle attack
+
+			countermeasures:
+				defining static ARP mappings for critical systems
+				monitoring ARP caches
+				use IDS
+
+		DNS Poisoning, Spoofing and Hijacking
+			= resolution attack
+			alter domain-name-to-IP-address mappings on DNS server
+			2008 Kavinsky discovered hsignificant vulnerability in DNS server
+			
+			countermeasure: upgrade DNSto DNSSEC (see dnssec.net)
+
+		Hyperlink Spoofing
+			= similar to DNS spoofing
+			or be an alteration of the hyperlink URLs in the HTML code of the documents sent to clients
+
+
+
+
+
+======================================================================================================================
+Chapter 13
+Managing Identity and Authentication
+
+subject = active entity that accesses passive object to receive information from, or data about , an object
+object = passive entity that provide information to active subject
+
+Types of access control:
+	preventive access control = thwart or stop unwanted or unauthorized activity to occur
+	detective access control = discover or detect unwanted or unauthorized activity
+	corrective access control = modifies the environment to return systems to normal after an unwanted or unauthoized activity has occured
+	deterrent access control = discourage security policy violations (depends on individual deciding not to take an unwanted action)
+	directive access control = direct, confine or control the action to force or encourage compliance with security policies
+	compensation access control = alternative when its not possible to use a primary control; or increase the effectiveness of a primary access control
+
+Type of access control implementation:
+	administrative access control = policies and procedures
+	Logical/technical controls = hardware or software mechanisms
+	Physical control = items that can be physically touch
+
+Authorization factors
+	type 1: something you know
+	type 2: something you have
+	type 3: something you are or something you do
+	type 4: somewhere you are
+
+Smartcard = credit-card size ID or badge that has an integrated circuit chip embedded
+Tokens	= password generating device that users can carry with them
+	synchronous dynamic password tokkens: time-based and synchronized with an authentication server
+	asynchronous dynamic pasword tokens: doesnt use clock, based on algorithm and incrementing counter
+
+Biometric Factor Error Ratings
+	type 1 error = valid subject is not authenticated > False Rejection Rate (FRR)
+	type 2 error = invalid subect is authenticated > False Acceptance Rate (FAR)
+		
+	compare the overall quality of biometric device with Cross Error Rate (CER)
+
+Kerberos (current version v5)
+	= tickets authentication system that employs a third-party entity to prove identification and provide authentication
+	offers single sign-on solution for users and provides protection for loggon credentials
+	relies on symetric-key cryptography using AES protocol
+	
+	Key distributor center = trusted third-party that provides authentication services
+		uses symmetric cryptography to authenticate clients to server
+		all clients and servers are registered to KDC
+		maintains secret key for all network members
+
+	Kerberos Authentication Server = hosts the functions of the KDC: TGS and AS
+		ticket-granting services (TGS): possibly being installed on an another server
+		authentication services (AS):  verifies or rejects the authenticity and timeliness of tickets
+		server often called as the KDC
+
+	Ticket-Granting Ticket (TGT) = provides proof a subject has authenticated to the KDC and is authorized to request tickets to access other objects
+		encrypted and includes a symmetric key, expiration time, and user's IP address
+		subjects present the TGT when requesting tickets to access objects
+
+	Ticket = encrypted message that provides proof that a subject is authorized to access an object
+		sometimes called a service ticket (ST)
+		subjects requests tickets to access objects, if they are authenticated and are authorized to access objects, Kerberos Issues them a ticket
+		have specific lifetimes and usage parameter
+
+	process work of Kerberos:
+		1. user types username and password into the client
+		2. client encrypts the username with AES for transmissions to the KDC
+		3. KDC verifies the username against a database of known credentials
+		4. KDC generates a symmetric key that will be used by the client and the kerberos server. Encrypts with a hash of the user password
+			KDC also generate a time-stampeded TGT
+		5. KDC transmits the encrypted symmetric key and the time-stamped TGT to the client
+		6. the client installs the TGT for use until it expires, client also decrypts the symmetric key using a hash of the user's password
+			
+		Note: the client's password is never transmitted over the netork, but it is verified
+
+		when client wants to access the subject:
+		1. client send its TGT back to the KDC with a request to access to the resource
+		2. KDC verify the TGT is valid and check its access control matrix for client's privilege to the resource
+		3. KDC generate a service ticket and sends it to the client
+		4. client sends the ticket to the server or service hosting the resource
+		5. server or service hosting the resource verifies the validity of the ticket with the KDC
+		6. once Id and authorization verified, the server or service opens a session with the client and begins communications or data transmission
+
+	Kerberos = versatil authentication mechanism that works over local LANs, remote access, and client-server resource request
+	SPOF = KDC, if KDC is offline, no one can access resources
+	all systems must be time-synchronized over 5 min of each other
+
+Federated Identity Management and SSO
+		
+	Federated Identity management = SSO for internet
+	multiple organization can join a federation, or group
+	often use the Security Assertion Make Up Language (SAML) or Service Provisioning MArkup Language
+
+	Hypertext Markup Language (HTML)
+		commonly used to display static web pages
+		derived from the  Standard Generalized Markup Language (SGML) and Generalized Markup Language (GML)
+		describes how data is displayed using tags to manipulate size and color of the text: ex.: <H1>I passed the CISSP exam</H1>
+					
+	Extensible Markup Language (XML)
+		display the data by describing the data
+		include tags to describe data as anything desired ex.: <ExamResults>Passed</ExamResults>
+		databases from multiple vendor can import and export data to and from an XML format
+		many specific schemas have been created so that companies know exactly what tags are being used for specific purposes
+
+	Security Assertion Make Up Language (SAML)
+		XML-based language that is commonly used to exchange Authentication and Authorization (AA) information between federated organizations
+		often used to provide SSO capabilities to browser access
+
+	Service Provisioning Markup Language (SPML)
+		newer framework based on XML, specifically designed for exchanging user information for federated identity single sign-on purposes
+		based on Directory Service MArkup Language (DSML), which display LDAP-based directory service information in an XML format
+
+	Extensible Access Control Markup Language (XACML)
+		used to define an Access Control policies within an XML format
+		commonly implements role-based access controls
+
+AAA Protocols
+	Authentication, Authorization and Accountability service = AAA services
+	used in VPN, local networks or Mobil IP
+
+	RADIUS (Remote Authentication Dial-In User Service)
+		centralizes authentication for remote connections
+		used by many internet service providers (ISP)
+		users call in, and after authentication, RADIUS server terminates the connection and initiates a call back to the user's predefined phone number
+		use the UDP and encrypt only the exchange of the password
+		defined in RFC 2865
+
+	TACACS+
+		alternative to RADIUS
+		separate Authentication, Authorization and Accountability, that can be hosted on different servers
+		encrypts all of the authentication information
+		TACACS and XTACACS use UDP port 49
+		TACACS+ uses TCP port 49
+
+	Diameter
+		= new version of RADIUS
+		built on RADIUS and TACACS
+		suppports wide range of protocols, like IP, VoIP and Mobile IP
+		not backward compatible to RADIUS
+		uses TCP port 3868 or Stream Control Transmission Protocol (SCTP) port 3868			
+		support IPsec and TLS encryption
+
+
+======================================================================================================================
+======================================================================================================================
+
+======================================================================================================================
+Chapter 14
+Controlling and Monitoring Acccess
+
+======================================================================================================================
+
+Understanding Authorization Mechanisms
+
+	implicit deny = ensures that access to an objects is denied unless access has been explicitly granted to a subject
+	Access Control Matrix = tables that includes subject, objects and assigned privileges,	objects focused
+	Capability Tables = different from ACL because they focus on subjects, subject focused
+	Constrained Interface (or restricted interface)	= applications use constrained interface to restrict what users can do
+	Content-dependant control = restricts access to data based on the content whitin an object (ex.: database view)
+	Context-dependant control = requires specific activity before granting user access, ex.: data flow for a transaction 
+	Need to know = subjects are granted access only to what they need to know for their work tasks and job functions
+	Least Privileges = subjects are granted only the privileges they need to perform their work tasks and job functions
+	Seperation of Duties and Responsabilities = sensitive functions are split into tasks performed by 2 or more employees
+
+Discretionary Access control (DAC)
+	allows owner, creator, or data custodian of an object to control and define access to that object
+	Ex.: user create a new spreadsheet, that user is owner of the file. this user can modify permissions of the file to grant access to other users
+
+	DAC is implemented using ACLs on objects
+	doesnt offer centrally controlled management system
+	admin can suspend user privileges while they are away, or disable accounts when they leave the organization
+	= very flexible
+
+Nondiscretionary Access Control
+	administred by administrators, that change access controls that affect the entire environment
+	acces doest not focus on user identity, but a static set of rules governing the whole environment manages access
+
+role-based access control (or task-based access control)
+	define a subject's ability to access an object based on the subject's role or assigned tasks
+	often implemented using groups
+	helps enforce the principle of least privilege by preventing privilege creep
+	privilege creep = tendency for privilege to accrue to users over time aas their roles and access needs change
+	usefull in dynamic environment with frequent personnel changes 
+
+Task Based Access Control (TBAC)
+	similar to role-BAC
+	= each user is assigned an array of tasks
+			
+rule-based access control
+	uses a set of rules, restrictions, or filters to determine what can and cannot occur on a system
+		includes granting a subject access to an object, or granting the subject ability to perform an action
+		have global rules that apply to all subjects
+	ex.: Firewall: include a set of rule + a final rule (= implicit deny rule)
+
+attribute based access control  (ABAC)
+	= advanced implementation of rule-BAC
+	use policies that include multiple attributes for rules
+	ex.: CloudGenix defines a software-defined wide area network (SD-WAN) solution that implements policies to allow or block traffic
+
+Mandatory Access Control (MAC)
+	= relies on the use of classification labels
+	each classification label represents a security domain, or realm of security
+		
+	security domain = collection of subjects and objects that share a common security policy
+	subjects are only able to access objects with the secret label, when they have a matching secret label
+	subjects have labels assigned to them based on their clearance level, which is a form of privilege
+	the requirement for subjects to gain the secret label is the same for all subjects
+	
+	often referenced as a lattice-based MAC model
+	
+	allows labels to identify more defined security domains:
+		within confidential section, they are 4 separate security domains labels Lentil, Foil, Crimson, and Matterhorn
+		users with confidential label also require tle additional label to access data within these compartments
+
+	assures "need to know" principles
+	prohibitive rather than permissive, uses an implicit deny philisophy
+	MAC model more secure than the DAC model but not as flexible and scalable
+
+	Classifications:
+		Hierarchical Environment: 
+			relates various classification labels in ordered structure from low security to high security
+			clearance in one level grants the subject access to objects in that level and below, but prohibits access to object above
+
+		Compartmentalized environment
+			no relationship between one security domain and another
+			subject need specific clearenace for the security domain of the object
+	
+		Hybrid Environment
+			combines both hierarchical and compartmentalized
+
+Advanced persistent threat (APT) = group of attackers who are working together and are highly motivated, skilled and patient
+impersonation attack = logging in as the user and accessing the user's resources
+
+Common access control attacks
+	Access aggregation attacks = collecting multiple insensitive information and aggregate them to learn sensitive information
+	Password attacks
+		strong passwords helps prevent password attacks
+		more common for an attacker to steal the account database and then crack the passwoords offline
+
+	Dictionnary attacks	
+		= attempts to discover passwords by using every possible password in a predefined database or list of common or expected passwords
+		one-upped-constructed password = previously used password, but with one character different
+			= often used approach to build rainbow tables
+
+	Brute-Force Attacks
+		= systematically attempting all possible combinations of letters, numbers, and symbols
+		usually programs that can automatically try all the combinations
+			
+		passwords and username are commonly stored in an account database file on secured systems
+			systems and applications commonly hash passwords and store the hash values
+			users authenticate by hashing the password prior to send it the system, sytem compares the hash values		
+				> password dont cross the network in clear form
+				> password databases do not store passwords in clear text
+		12-character password using 4 character types can take thousands of years to crack
+
+	Birthday Attacks
+		= focuses on finding collisions
+		names comes from the statistical phenomena called 'the birthday paradox' 
+		reduce the success of birthday attacks by using hashing algorithms and salts (rainbow tables)
+
+	MD5 is no more collision free
+	SHA-3 use 512bits and is considered collision free, for now
+
+	Rainbow Table Attacks
+		= uses of large database of pre-computed hashes to reduce time of guessing a password and its hash
+		the password cracker simply compares hashes until it find a match
+		14 character with 4 types of characters > 7.5GB rainbow table
+		15 character with 4 types of characters > beat most rainbow tables
+ 
+		many systems salt passwords to reduce effectiveness of rainbow tables
+			salt = group of random bits , addded to a password before hashing it		
+			
+	Sniffer Attacks
+		or snopping attack, or eavesdropping attacks
+		sniffing captures a packets sent over a network with the intent of analyzing the packets
+			
+		Countermeasures:
+			encrypt all sensitive data
+			use one-time password when ecnryption is not possible
+			protect network device with physical security
+			monitor the network for signatures from sniffers
+
+	Spoofing Attacks or masquerading = pretending to be someone, or somthing, else
+	Social engineering attack = gain the trust of someone by using deceit, such as false flattery or impersonation
+	shoulder surfing = placed filters over a monitor, password masking
+	Phishing = giving up sensitive information by opening an attachment or clicking a link
+	Spear phishing = form of phishing targeted to a specific group of users, such as employees within a specific organization
+	Whaling	= variant of phishing that target senior or high-level executives such as CEOs and presidents withi a company
+	Vishing	= phishing via Instant Mesaggers and VoIP
+	Smartward Attacks = side-channel attack is a passive, non invasive attack intended to observe the operation of a device
+	Denial-of-Service Attacks = prevents the system from processing or responding to legitimate traffic or requests for resources
+
+Summary of protection methods
+		
+	Control physical access to systems
+	Control electronic access to files
+	Encrypt password files
+	Create a strong password policy
+	Use Password masking
+	Deploy Multifactor authentication
+	Use account lockout controls: lock an account aftr incorrect password is entered a predefined number off times
+		typically use clipping levelsthat ignore some user errors but take action after reaching a threshold
+	Use last logon notification
+	educate users about security
+
+======================================================================================================================
+
+======================================================================================================================
+Chapter 15
+Security Assessment and testing
+
+Performing Vulnerability Assessment
+
+	Vulnerability Scans
+		automatically probe systems, application and networks, looking for weaknesses that may be exploited by an attacker
+		scanning tools provide quick, point-and-click tests or scheduled scanning without requiring manual intervention
+				
+	Network discovery Scan
+		uses a variety of techniques to scan a range of IP addresses, searching for systems with open network ports
+		
+		TCP SYN Scanning: 
+			or "half-open" scanning
+			sends a single packet to each scanned port with SYN flag set, this indicate a request to open a new connection
+			if the scanner receive the SYN and ACK flag set, system is moving to the second phase in the three-way TCP handshake and that the port is open. 
+			
+		TCP Connect Scanning
+			opens a full connection to the remote system on the specified port
+			used when the user running the scan doesnt have the necessary permissions to run a half-open scan
+
+		TCP ACK scanning
+			sends a packet with the ACK flag set, indicating that it is part of an open connection
+
+		Xmas scanning
+			sends a packet with the FIN, PSH, and URG flags set
+
+		nmap is the most common tool
+			released in 1997
+			identifies the current state of each network port on the system, providing a status:
+				open: port open and there is an application actively accepting connections on that port
+				closed: port accessible on the remote system, meaning the firewall is allowing access, but no application accepting connections on that port
+				filtered: nmap unable to determine if the port is open or closed because firewall is interfering with the connection attempts
+
+	Network vulnerability scanning
+		dont stop on detecting open ports but continue on to probe a targeted system or network for the presence of known vulnerabilities
+		contains databases of thousands of known vulnerabilities
+	
+		false positive report = vulnerability shown on nmap but there is no problem
+		false negative report = misses a vulnerability and fail alert the administrator
+
+		authenticated scans of systems = scanner has read-only access to the server, can use it to access read configuration information from the target system and use that information when analyzing vulnerability  testing results
+			reduce false positive and false negative reports
+
+		TCP 		Ports
+		FTP		21
+		SSH		22
+		Telnet		23
+		SMTP		25
+		DNS		53
+		HTTP		80
+		POP3		110
+		NTP		123
+		HTTPS 		443
+		SQL Server	1433
+		Oracle 		1521
+		H.323		1720
+		PPTP		1723
+		RDP		3389
+
+Web Vulnerability Scanning = Nessus vulnerability scanning tool
+
+Penetrating testing
+	includes following steps:
+		performing basic reconnaissance to determine system function
+		network discovery scans to identify open ports
+		network vulnerability scans to identify unpatched vulnerabilities
+		web application vulnerability scans to identify web application flaws
+		use of exploit tools to automatically attempt to defeat the system security
+		manual probing and attack attempts
+
+	use a tool called metasploit: use scripting language to allow the automatic execution of common attacks
+
+Code review or peer review
+	Fagan inspections, most formal review process:
+		1. Planning
+		2. Overview
+		3. Preparation
+		4. Inspection
+		5. Rework
+		6. Follow-up
+
+	Static testing	= evaluates the security of software without running it by analyzing either the source code or the compiled application
+	Dynamic testing	= evaluates the security of software in runtime environment
+	Fuzz testing = specialized dynamic testing that provides many different types of input to software to stress its limits and find previously undetected flaws
+	Mutation (Dumb) Fuzzing
+		take previous input values  and manipulates it to create fuzzed input
+		ex.: alters the characters of the content, appends string to the end of the content
+		zzuf automate the process of mutation fuzz
+			> bit flipping
+	
+	
+
+======================================================================================================================
+======================================================================================================================
+	
+
+======================================================================================================================
+Chapter 16
+Managing Security Operations
+
+======================================================================================================================
+Applying Security Operations Concepts
+	Need to know and least privilege
+	Separation of Duty and Responsabilities
+	Separation of privileges
+	Segregation of Duties
+	Two-person control
+	split knowlege combine two-person control and segregation of duties
+	Job rotation
+	Mandatory Vacations
+	Monitor Special Privileges
+	
+Managing the information cycle of life
+	marking data
+	Handling data
+	storing data
+	Destroying data	
+	
+Service Level Agreements = agreement between an organization and an outside entity
+	Memorandum of understanding (MOU)
+	Interconnection Security Agreement (ISA)
+		specify the technical requirements of the connection: how 2 parties establish, maintain and disconnect, also minimum encryption
+	NIST 800-47 includes details information on MOU and ISA
+
+Managing Cloud-Based Assets
+	NIST SP 800-145 provides standard definition for many cloud-based services and deployment models
+	NIST SP 800-144 provides in-depth details on security issues related to cloud-based computing
+
+Media Management
+	media = everything that can hold data
+	primary risk of USB drive = malware infections and data theft
+	Imation sells IronKey flashdrive that include multiple level of built-in protection
+		AES 256-bit hardware based encryption
+
+Security Impact Analysis
+	change management process:
+	1. request a change
+	2. Review the change
+	3. approve/reject the change
+	4. schedule and implement the change
+	5. document the change
+
+
+
+
+======================================================================================================================
+	
+======================================================================================================================
+Chapter 17
+Preventing and responding to incident
+
+======================================================================================================================
+
+Defining an incident = any event that have a negative effect on a CIA of an organizatio's assets.
+	ITIL v3: un unplanned interrution in IT Service or a reduction in the quality of IT service
+	computer security incident = result of an attack, or the result of malicious or intentional actions on the part of users
+	RFC 2350: security incident and computer seecurity incident = any adverse event which compromises some aspects of computer or network security
+	NIST 800-61: a violation or imminent threat of violation of computer security policies, acceptable use policies, or standard security practice
+
+Incident Response Steps
+	Detection > Response > Mitigation > Reporting > Recovery > Remediation > Lesson Learned
+		  ^------------------------------------------------------------|
+	NIST SP 800-61: Preparation > Detection and Analysis > Containment, eradication and recovery > postincident recovery
+
+Understanding attacks
+	
+	Denial of Service Attack = prevent a system from processing or responding to legitimate traffic or requests for resources and objects
+		DDoD: Distributed Denial of Service = multiple systems attacks a single system at the same time
+	SYN flood attack = common DoS attack
+		disrupt the standard three-way handshake used by TCP to initiate communication sessions
+			send pultiple SYN packets but never complete the connection with an ACK
+			each SYN packet provoke the server to send a ACK/SYN back
+			server often wait for ACK for as long as 3 min, leaving an incomplete session, taht consumes resources
+			attacker often spoof a the source adress, each SYN comes from a different address
+				
+			IDS and firewalls often include mechanisms				
+			using SYN cookie is one method of blocking the attack
+			reduce time of waiting the ACK		
+			
+	TCP reset attack = spoof sender and send a RST packet > session need to be reestablish, and data may need to be recreated
+
+	Smurf and Fraggle attack = DoS attacks
+		floods the victim with ICMP echo packets instead of with TCP SYN packets
+		= spoof broadcast ping request using the IPaddress of the victim as the source IP address
+		take advantage of an amplified network (= smurf amplifier) by sending a directed broadcast through a router
+		RFC 2644 (in 1999) changes the standard default for configure router not to forward directed broadcast traffic
+			> limit smurf attack to a single network
+		common to disable ICMP on firewalls, routers and servers to prevent any attack using ICMP
+
+	fraggle atack = similar to smurf attacks
+		uses UDP packets over UDP ports 7 and 19
+
+	Ping Flood = flood a victim with ping requests
+		very effective using botnets (as a DDoS attack)
+		counter by blocking ICMP traffic
+			IDS can detect a ping fllod and modify environment to block ICMP traffic during the attack
+
+	Botnets	= robots or zombies
+		bot herder = criminal who controls all the computer in the botnet via commands and control servers
+		computers often oin a botnet after being infected by a molicious code of software
+		botnet of over 40000 computers are relativly common, 1M of systems have been seen in the past
+		some bot herders control more than 1 botnet
+		counter: use anti-malware software, keep browser and plug-in up-to-date
+	
+	Ping of Death =	employs an oversized ping packet: over 64KB (ping packets are normally 32B or 64B)
+
+	teardrop = attackers fragment traffic in such a way that a system is unable to put data packets back together
+		counter: patches, IDS can detect the malformed packets
+
+	Land Attack = attackers send SYN packets to a victim using the victim's IP address as both the source and the destination IP address
+		tricks the system into constantly replying to itself and cause it to freeze, crash or reboot
+		discovered in 1997 and resurfaced attacking different ports
+		counter: keep system up-to-date, filtering traffic with identical source and destination addresses
+
+	Zero-day exploits = attacking a vulnerability that is unknown to others
+		attacker first discovers a vulnerability: common definition of zero-day exploit
+
+)	Malicious code = any script or program that performs an unwanted, unauhtorized, or unknown activity on a computer system
+		= virus, worms, trojan horses, documents with destructive macros, and logic bombs
+		distributed: in the past: floppy disks, hand-carried from system to system, today: drive-in downloads
+		drive-in download = code downloaded and installed on a user's system without the user's knowledge
+			counter: keep system up-to-date
+			Zeus spread to drive-by downloads and phishing attempts and stole credentials for bank sites
+			Gumblar redirected users to another site, which then download and open an infected PDF file
+
+	Man-in-the-middle = attacker a position between the 2 end-points of an ongoing communication
+		can copy or sniff the traffic > sniffing attack
+		act as a store-and-forward or proxy mechanism > attacker can collect logon credentials and sensitive data, or change the messages exchanged
+			need impersonate the client from the server, and the server from the client
+			often need a combination of multiple attacks
+				-alter routing information and DNS values
+				-falsify ARP lookup
+
+			counter: keep system out-to-date with patches
+					IDS cant usually detect this attack, but can detect abnormal activities occurring over communication links
+
+	War Dialing = using a modem to search for a system that accepts inbound connection attemps
+		dial phone numbers and listen for computer carrier tones
+		can search any range of numbers
+		newer form: uses VoIP to make calls without use of modems
+		Metasploit incorporated an update version of WarVOX = war-dialing tool that uses VoiP
+		counter: 	imposing strong remote access security (including strong authentication), 
+				using callback security, ensuring that no unauthorized modems, resctricting what 
+				using call logging
+		
+	Sabotage
+		= destruction or disruption committed by an employee
+		counter:	employee termination should be handle swiftly, account access should be disabled as soon as possible
+				intensive auditing, monitoring, keeping lines of communication open between emplyees and managers
+
+	Espionage
+		= malicious art of gathering propriatery, secret, private, sensitive or confidential information
+
+IDS and IPS
+	IDS:
+		intrusion occurs when an attacker bypass or thwart security mechanisms and gain access to an organization's resources
+		effective method of detecting DoD and DDoS attacks
+			can raise alarms and send alerts
+			automates the inspection of logs and real-time system events
+			can modify the environment to stop an attack
+
+	IPS:
+		all the capability of an IDS but can also take additional steps
+		user can disable extra features to make it function as a IDS
+				
+	often referred as IDPS
+
+	Kwowledge and Behaviour based  detection: use signatures detection
+	behaviour-base compare activity against a baseline of normal performance
+		or statistical intrusion detection, or anomaly detection or heuristic-based detection
+		create a baseline over a limited time of activity (usually 1 week)
+		some continue to monitor the activity and update the baseline
+		but: often raise a high number of false alarms, false alerts or false positive
+
+Specific Preventive Measures
+	Honeypots/Honeynets = individual or networked computers created as a trap for intruders
+	Pseudo Flaws = false vulnerabilities or apparent loophole intentionnaly implanted in a system in an attemp to tempt attackers
+	Padded Cells = similar to honeypot = simulated environment that offers fake data to retain an intruder's interest
+	Warning Banners
+	Anti-malware
+	Whitelisting (app allowed) and Blacklisting (app blocked)
+	
+	Firewalls = provide a protection to a network by filtering traffic
+		based on IP addres, port, protocol
+		include rules with ACL
+		
+		application-level gateway firewall filters traffic based specification application requirement
+		circuit-level gateway firewalls filters traffic based on the communication circuit
+		stateful inspection firewalls and dynamic packet filtering firewalls, filter traffic based on its state within a stream of traffic
+			
+		next-generation firewall funtions as Unified Threat Management (UTM)
+			combine several filtering capabilities
+			able to perform packet inspection techinques
+
+	Sandboxing = security boundary for applications and prevents the application from interacting with other applications
+
+
+Clipping Level	= form of nonstatisitcal samplings
+	select only events that exceed a clipping level, which is a predefined threshold for the event
+	often associated with a form of mainframe auditing known as violation analysis: system is monitored for error occurences
+	nonstatistical sampling is discretionary sampling (or sampling at the auditor's discretion)
+		less expensive and easier to implement than statistical sampling
+		less reliable and mathematically less defensible
+
+Steganography = embedding a message within a file
+Watermarking = embedding an image or pattern in paper that ins't readily perceivable
+
+
+======================================================================================================================
+
+======================================================================================================================
+Chapter 18
+Disaster Recovery Planning
+
+======================================================================================================================
+Natural disaster = reflects the occasional fury of our habitat
+	earthquake: 82% of the 50 states in US are concerned
+	flood: 100-year flood plan / 500-year flood plan = 1/100 chance of flood per year
+Man-made disaster: intentional and unintentional
+	Fires: 1000 building fire in the US every day
+	Acts of terrorism: 9/11 estimated total damage of 40billion $
+
+Single Point Of Failure (SPOF) = any component that can cause an entire system to fail
+Fault tolerance = ability for a system to suffer a fault but continue to operate
+System Resilience = ability of a system to maintain an acceptable level of service during an adverse event
+
+Trusted Recovery = provides assurance that after a failure or crash, the system is just as secure as it was before the failure or crash occurred
+	fail-secure state = will default to a secure state in the event of a failure
+	fail-open state	= will fail in an open-state, granting all access
+	
+Quality of Service (QoS) = QoS controls protect the integrity of data networks
+	bandwidth = capacity available to carry communications
+	latency = the time it takes aa packet to  travel from source to destination
+	Jitter = variation in latency between different packets
+	packet loss = packets loss between source and dest, need retransmission
+	interference = electrical noise, faulty equipment...
+
+cold sites = standby facility large enough to handle the processing load of an organization and equipped with appropriate equipments
+	swithover takes weeks
+Hot Sites = maintained in constant working order, with full complement of server, workstations, and communications links ready
+	switchover time in seconds to minutes
+Warm Site = middle ground between cold and hot site
+	switchover typically less than 12h
+
+Database recovery
+	electronic Vaulting: DB backups are moved to a remote site using bulk transfers
+	remote journaling = data transfer in a bulk transfer mode, on frequent basis: usually once per hour
+	remote mirroring = live database is maintained at the backup site
+
+Backup and Offsite Storage
+	Full Backups: full copy of the data contained on the protected device
+		duplicate all the files on the system regardless of the setting of the archive bit
+		once complete, archive bit of all files is reset, turned off, or set to 0
+
+	Incremental Backup: store only those file that have been modified since the time of the most recent full or incremental backup
+		only files that have the archive bit turned on, enabled, or set to 1 are duplicated
+		once complete, archive bit of all files is reset, turned off, or set to 0
+
+	Differential Backup: store all files that have been modified since the time of the most recent full backup
+		only files that have the archive bit turned on, enabled, or set to 1 are duplicated
+		does not change the archive bit
+	differential take less time to restore, but longer to create
+	
+	Using Backup: 
+		full backup on Monday, and differential backups every other night of the week:
+			failure on Saturday morning: restore full backup of Monday and differential of Friday
+		full backup on Monday, and incremental backups every other night of the week:	
+			failure on Saturday morning: restore full backup of Monday and each incremental backup of the week, in chronological order
+
+	Backup tape format:
+			rotation cycle = frequency of backup and retention lenght of protected data
+			Digital Data Storage (DDS)/ Digital Audio Tape (DAT)
+			Digital Linear Tape (DLT) / Super DLT
+			Linear Tape Open (LTO)
+
+	Tape rotation
+		Grandfather-Father-Son (GFS)
+		Tower of Hanoi
+		Six Cartridge Weekly Backup
+
+	Hierarchical storage management (HSM)
+	 	= automated robotic backup jukebox consisting of 32 or 64 optical or tape backup devices, all configured as a single drive array
+
+recovery = operations and processes
+restoration = facility and environment
+
+Testing and Maintenance
+	Read-through test = distribute copies of the DRP to the DRP team members for review, accomplishes 3 goals:
+	Structured Walk-through	or table-top exercise
+	Simulation test = DRP team are presented with a scenario and asked to develop an appropriate response
+	Parallele test = relocating personnel to the alternate recovery site and implementing site activation procedures
+	Full-interruption test = involve actually shutting down operations at the primary site and shifting them to the recovery site
+	Maintenace = must adapt DRP to living change in the company
+
+======================================================================================================================
+
+======================================================================================================================
+Chapter 19
+Incidents and ethics
+
+======================================================================================================================
+
+investigations type
+	
+	Operational Investigations = examine issues, primary goal : resolving operational issues
+	Criminal Investigation = typically conducted by law enforcement personel
+		must meet the beyond a reasonable doubt standard of evidence
+	Civil Investigation = typically involve no law enforcement but rather internal employee and outside consultants
+		use the weaker preponderance of the evidence standard, demonstrate that the outcome of the case is more likely than not
+	Regulatory Investigations = when individual or corporation has violated administrative law
+	Electronic discovery = applies to both paper records and electonic records
+		
+Evidence
+	prosecute attorney must provide sufficient evidence to prove an individual guilty beyond a reasonable doubt
+	Admissible evidence
+		relevant to determine a fact
+		material (= relative) to the fact
+		competent (= obtained legally)
+	Types of evidence
+		real evidence or object evidence = things that may actually be brought in court
+		Documentary evidence = include any written item, must be authenticated
+	evidence labeled:
+		general description of the evidence
+		time and date the evidence was collected
+		exact location the evidence was collected from
+		name of the person collecting the evidence
+		relevant circumstances surrounding the evidence	
+	Testimonial Evidence = testimony of a witness
+		direct evidence: oral testimony that proves or disproves a claim based on their own direct observation
+		expert opinion: based on the other facts presented and their personal knowledge of the field
+
+International Organization on Computer Evidence (IOCE) outlines 6 principles:
+	+ all of the general forensic and procedural principles must be applied
+	+ actions taken should not change that evidence
+	+ person that access to original digital evidence should be trained for the purpose
+	+ all activity relating to the seizure, access ,storage, or transfer of digital evidence must be fully documented, preserved, and available for review
+	+ an individual is responsible for all action taken with respect to digital evidence while it is in their possession
+	+ any agency that is responsible for seizing, accessing, storing, or transferring digital evidence is responsible for compliance with these principles
+
+search warrant = 4th amendment outlines the burden placed on investigators to have a valid search warrant
+	warrant can be issued only based on probable cause, must be specific in their scope
+
+Conducting the investigation
+	never conduct investigation on an actual compromised system: take system offline, make backup to use in investigation
+	never attempt to hack back and venge a crime
+
+advanced persistent threats (APT): nation-state, organized, crime, terrorist group  > highly effective attacks against a very focused target
+
+event = any occurence that takes place during a certain period of time
+incident = an event that has a negative outcome affecting the confidentiality, intregrity or availability of an organization's data
+	
+incident response process
+	Step 1: Detection and Identification
+	Step 2: response and Reporting
+	Step 3: Recovery and Remediation
+
+interview = only gather information
+interrogation = suspect the person, and intend to use the infomation gathered in court
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+======================================================================================================================
+
+
+======================================================================================================================
+Chapter 20
+Software DEvelopment Security
+
+======================================================================================================================
+
+Programmning Language
+	machine language = 1G: instructions that computer follows, consisting of a long series of binary digit
+	assembly language = 2G: higher-level alternative that uses mnemonics to represent the basic instruction set of a CPU
+	high level language = allow programmers to write instructions that better approximate human communication
+	compiled languages = 3G: C, Java, Fortran
+	interpreted languages: JavaScript or VBScript
+	4GL = attempt to approximate natural languages, including SQL
+	5GL = allow programmers to create code using visual interfaces
+
+	Object-oriented programing (OOP): C++, Java, .NET
+		message = communication to or input of an object
+		method = internal code that defines the actions an object can perform in response to a message
+		behavior = results or output exhibited by an object, results of a message being processed through a method
+		Class = collection of the common methods from a set of objects that defines the behaviour of those objects
+		Instance = objects are instances of or example of classes that contain their methods
+		Inheritance = occurs when methods from a classe (parent or superclass) are inherited by another subclass (child)
+		Delegation = forwarding of a request by an object to another object
+		Cohesion = describes the strength of the relationship between the purposes of the methods within the same class
+		Coupling = level of interaction between objects
+
+fail-secure failure state = puts the system into a high level of security until an admin can diagnose the problem and restore the system
+fail-open state = allows users to bypass failed security controls, erring  on the side of permissiveness
+
+Life Cycle Model
+	Waterfall Model: SDLC = series of iterative activities, traditionally 7 stage of development
+		feedback loop characteristic = allow development to return to the previous phase to correct defects
+	Spiral Model = encapsultaes a number of iterations of another model > metamodels or "model of models"
+	Agile Software Development
+		highest priority is to satisfy the customer
+		welcome changing requirement, even late in development
+		deliver working software frequently
+		business people and developers must work together daily
+		build projects around motivated individuals
+		face-to-face conversation is the most efficient and effective method of conveying information
+		working software is the primary measure of progress
+		agile process promote sustainable development
+		continuous attention to technical excellence and good design enhances agility
+		simplicity (= art of maximizing the amount of work not done) is essential
+		best architectures, requirements, and designs emerge from self-organizing teams
+		at regular intervals, the team reflects on how to become more effective
+
+Software Capability Maturity Model (SW-CMM, or CMM or SCMM) by the Software Engineering Institute (SEI)
+	level 1: intial
+	level 2: repeatable
+	Level 3: defined
+	Level 4: managed
+	Level 5: Optimizing
+
+IDEAL Model
+	Phase 1: Initiating
+	Phase 2: Diagnosing
+	Phase 3: Establishing
+	Phase 4: Acting
+	Phase 5: Learning
+
+Memorization: "I..I, Dr Ed, am Lo(w)"
+
+Gantt: shows the interrelationships over time between projects and schedules
+PERT (Program Evaluation Review Technique): project-scheduling tool use to judge size of development product and calculate the standard deviation (SD) for risk assessment
+
+hierarchical data model: combines records and fields that are related in a logical tree structure
+
+	> one-to-many model: each node may have 0 to many children, but only one parent
+
+distributed data model: has data stored in more than one database, logically connected
+
+
+Relational Databases
+ = flat 2 dimensional tables made up of rows and columns
+
+	Object-oriented programing and databases: object oriented databases (OODB)
+
+
+	cardinality = number of row, usually changes frequently
+ 
+	degree = number of column, usually doesn't change frequently
+
+	domain = set of allowable values that an attribute can take
+
+
+		easy to remember:
+			cardinality > card > deck of card > rows
+
+			degree > wall thermometer > column
+
+		
+
+	key = subset of the fields of a table and are used to uniquely identify records
+
+		Candidate key: subset of attributes that can be used to uniquely identify any record in a table
+
+		primary key: selected from the set of candidate keys for a table to used to uniquely identify the records in a table
+
+		Foreign keys: or referential integrity, used to enforce relationships between two tables
+
+
+all relational database use a standard language: Structure Query Language (SQL)
+
+	SQL is divided in 2 distinct components:
+
+		Data Definition Language (DDL) = allow creation and modification of the database structure
+
+		Data Manipulation Language (DML) = allows user to interact with the data
+
+
+
+Database Transactions = discrete set of instructions that will either succeed or fail as a group
+
+	COMMIT command or implicit end of the transaction
+
+	ROLLBACK: abort transaction
+
+	have 4 attributes: ACID model
+
+		Atomicity = must be an all-or-nothing affair
+
+		Consistency = must begin and end operating in an environment that is consistent with DB's rules
+
+		Isolation = transactions operate separately from each other
+
+		Durability = once committed, must be preserved
+
+	
+Security for Multilevel Databases
+
+	database contamination = mixing data with different classification levels
+
+
+	Restricting access with views
+
+	Concurrency
+ or edit control = uses a lock feature to allow one user to make changes but deny other users access
+	semantic integrity = ensure user actions don't violate any structural rules
+
+	time and date stamps = maintain integrity
+
+	content-dependant access control = example of granular object control
+
+	cell-suppression = concept of hiding individual database fields or cells
+	Context-dependant access control = evaluates the big picture to make access control decisions
+
+	database partitioning: subvert aggregation and inference vulnerabilities
+
+	Polyinstantiation
+ = when multiple rows in the same relational database table appear to have identical primary key elements but contain different data for use at differing classification level
+
+	noise and perturbation: admin insert false or misleading data into DBMS
+	
+		
+Open Database Connectivity (ODCB)
+: Application -> ODBC manager -> Database drivers -> Database types
+
+Understanding Knowledge-Based Systems
+	
+	
+	
+	Expert Systems
+
+		the knowledge base: contains rules known by an expert system
+
+		the inference machine: analyzes information in the knowledge base to arrive at the appropriate decision
+
+		Neutral Networks
+ = chains of computational units used to imitate the biological reasoning of the human mind
+
+		Decision support system (DSS)
+
+
+
+======================================================================================================================
+
+=======================================================================================================================================================
+
+Chapitre 21:
+Malicious Code and Application Attacks
+			
+=======================================================================================================================================================
+
+Malicious code
+	
+	Viruses:2 main functions: propagation and destruction
+: 
+	Virus propagation technique
+
+		
+master book record (MBR) viruses
+: MBR = 512B = single disk sector, normally first of the media that is read
+
+		File Infector Viruses
+		Companion Virus =  self-contained executable files that escape detection by using a filename similar to a legitimate OS file
+
+		Macro viruse = use scriptin functionnality called Macros 
+
+		 = 
+	Virus Technology
+
+		multipartite viruses
+
+			use more than one propagation technique in an attempt to penetrate systems that defend against only one method or the other
+
+		Stealth virus
+
+			hide themselves by actually tampering with the operating system to fool antivirus packages into thinking that everything is normal
+
+			modify their own code as they travel from one system to another
+
+					> constantly changing signature, signature-based antivirus packages useles
+		Encrypted virus = use cryptographic techniques to avoid detection
+
+
+	Logic Bombs
+ = malicious code objects that infects a system and lie dormant until they are triggered by occurrence of one or more conditions
+
+	Trojan Horses = appears benevolent but carries malicious, behind-the-scene payloa
+	Ransomware = infects a machine and encrypt documents with a key only known by malware creator
+		
+	Botnets = trojan horse make all the infected systems members of a botnet
+	Worms = propagate themselves without requiring any human intervention
+
+		Code red worms
+
+		Stuxnet
+
+	Spyware = monitors your system and transmits important information to a remote system that spies on activities
+
+	Adware
+ = displays advertisements on infected computers, could display pop-up or monitor shopping behavior and redirect to competitor websites
+
+
+Countermeasures
+
+	
+deploy antivirus-filtering software on at least 3 keys areas:
+
+		client systems = every workstation on a network
+
+		server systems: more critical than protecting client systems
+
+		content filters: scans inbound and outbound electronic mail and web traffic
+
+
+	removal = removes the malicious code but does not repair the damage
+
+	cleaning = removes the malicious code and repair damages done
+
+	
+Password Attack
+
+	
+	Password guessing
+ = lists of most common password
+	Dictionary attacks
+	
+	password crackers e
+x.: Cain & Abel, Ophcrack, Brutus, THC Hydra, L0htCrack, Pwdump, Rainbowcrack
+
+	
+Application Attacks
+
+	Buffer Overflow = bexist when dev doesn't properly validate user input
+
+	Time of Check to Time of Use (TOCTTOU or TOC/TOU)
+ = program checks access permissions too far in advance of a resource request
+
+	Back Doors
+ = undocumented command sequence that allows individuals with knowledge of the back door to bypass normal access restrictions
+
+
+Web Application Security
+
+
+	
+Cross-Site Scripting (XSS)
+ = occur when web application contain some type of reflected input
+	SQL Injection = use XSS to gain access to an underlying database
+
+
+	
+Reconnaissance Attacks
+
+
+	IP Probes or IP sweeps or Ping sweeps = ping each address in a range
+
+ 	Port Scan = probe all the active systems
+
+
+	Vulnerability scan: ex.: Nessus, OpenVAS, Qualys, Core Impact, Nexpose
+
+
+Masquerading attacks
+ = attack borrow identity  of legitimate users and systems to gain the trust of third parties
+
+	IP Spoofing = reconfigure their system so that is has the IP address of a trusted system
+
+ 		3 simple filtering:
+
+			+ packets with private internal source IP address dont enter the network from the outside
+
+			+ packets with private external source IP address dont exit the network from the inside
+
+			+ packets with private IP address dont pass through the router in either direction
+
+
+	Session Hijacking = malicious individual intercepts part of the communication between an authorized user and a resource
+
+		
+=======================================================================================================================================================
+
+
+
+
+
+ 
