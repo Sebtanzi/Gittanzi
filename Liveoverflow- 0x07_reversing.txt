@@ -1,0 +1,49 @@
+file myfile
+#check what kind of file
+
+man ascii
+#show ascii table
+
+hexdum -C myfile
+#show myfile in ascii
+	ELF = file is a ELF executable
+	find some library
+	basic command
+	
+strings myfile
+#show all strings in myfile
+
+objectdump -x myfile
+
+man syscalls
+
+strace myfile
+#show syscalls
+
+ltrace myfile
+#trace library function
+
+hopper v4
+#program disassembler
+
+radare
+r2 myfile
+	aaa
+	#automatically automize functions
+	
+	afl
+	#print all functions that are found
+	
+	s
+	#find the location of the function
+	
+	pdf
+	#print the dissambly of thecurrent function
+	
+	shift+r
+	#change color
+	
+	:dc
+	#run the program
+	
+	

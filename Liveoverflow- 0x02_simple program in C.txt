@@ -1,0 +1,15 @@
+in vim
+	:syntax on
+	:set number
+
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+	if(argc==2) {
+		printf("Knok knok, %s\n, argv[1]);
+	} else {
+		fprintf(sterr, "Usage: %s <name>\n",argv[0]};
+	}
+	return 0;
+}
+

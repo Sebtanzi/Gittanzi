@@ -1,0 +1,391 @@
+[Davybot - Intro to x86 Assembly Language]
+
+[part1]
+vim ex1.asm
+	global _start		#entry point for the program #global used to make an identifier accessible to the liker
+		_start: 		#create a label, used to name location in the code
+			mov eax, 1	#move 1 to the register eax, eax = 1 means stop
+			mov ebx, 42	#move 42 to the register ebx, ebx = 42 means exit value of the program
+			int 0x80	#interupt, processor transfer the control to an interrupt handler specified by 0x80
+						# 0x80 = interupt value for system calls
+						
+nasm -f elf32 ex1.asm -o ex1.o 	#-f type of file
+ld -m elf_i386 ex1.o -o ex1		#-m 
+./ex1
+echo $?
+	42
+	
+vim ex1.asm
+vim ex1.asm
+	global _start		#entry point for the program #global used to make an identifier accessible to the liker
+		_start: 		#create a label, used to name location in the code
+			mov eax, 1	#move 1 to the register eax, eax = 1 means stop
+			mov ebx, 42	#move 42 to the register ebx, ebx = 42 means exit value of the program
+			sub ebx, 14	#substract 14 to ebx
+			int 0x80	#interupt, processor transfer the control to an interrupt handler specified by 0x80
+						# 0x80 = interupt value for system calls
+						
+./ex1
+echo $?
+	18
+	
+mov ebx, 123	; ebx = 123
+mov eax, ebx	; eax = ebx
+add ebx, ecx	; ebx += ecx
+sub ebx, edx	; ebx -= edx
+mul ebx			; eax *= ebx #always multiply by eax
+div edx			; eax /= edx #always eax divided by the value specified
+
+vim ex2.asm
+	global _start
+	
+	section .data
+		msg db "Hello, world!", 0x0a	#0x0a is hex for 10, which the end line caracter
+		len equ $ - msg					#determine the lenght of the message by sub the actual place from the msg place
+	
+	section .txt
+	_start:
+		mov ebx, 1		; stdout file descriptor
+		mov eax, 4		; sys_write system call
+		mov ecx, msg	; bytes to write
+		mov edx, len	; number of bytes to write
+		int 0x80		; perform system call, with register state above
+		mov eax, 1		; sys_exit system call
+		mov ebx, 0		; exit status is 0
+		int 0x80
+		
+[part2]
+instruction pointer
+	EIP #location of execution, not like register, changer by ops
+
+vim ex3.asm	
+	global _start
+
+	section .txt
+	_start:
+		mov eax, 4		; sys_write system call
+		mov ebx, 42		; stdout file descriptor
+		jmp skip		; jump to "skip" label # = unconditionnal jump
+		mov ebx, 13		; exit status is 13 # = verif that the jump has been made, ebx = 13 if not
+		
+	skip:
+		int 0x80
+
+nasm -f elf32 ex3.asm -o ex1.o 	#-f type of file
+ld -m elf_i386 ex3.o -o ex1		#-m 
+./ex3
+echo $?
+	42		
+	
+vim ex3.asm	
+	global _start
+
+	section .txt
+	_start:
+		mov ecx, 99		; set ecx to 99
+		mov ebx, 42
+		mov eax, 1
+		cmp ecx, 100	; compare ecx to 100
+		jl skip			; jump if less than
+		mov ebx, 13
+		
+	skip:
+		int 0x80
+		
+je  A, B	; jump if equal
+jne A, B	; jump if not equal
+jg	A, B	; jump if greater
+jge	A, B	; jump if greater or equal
+jl	A, B	; jump if less
+jle	A, B	; jump if less or equal
+
+vim ex4.asm	
+	global _start
+
+	section .txt
+	_start:
+		mov ebx, 1		; set ebx to 1
+		mov ecx, 4		; number iterations
+	
+	label:	#label the loop
+		add ebx, ebx	; ebx += ebx
+		dec ecx			; ecx -= 1		#decrement
+		cmp ecx, 0		; compare ecx with 0
+		jg label		; jump to label if greater
+		mov eax, 1		; sys_exit system call
+		int 0x80		; perform system call
+		
+./ex4
+	16
+
+vim ex5.asm	
+	global _start
+
+	section .data
+		addr db "yellow"
+		
+	section .text
+	_start:
+		mov eax, 4
+		mov ebx, 1		; set ebx to 1
+		mov ecx, addr	; set ecx to add = "yellow"
+		mov edx,6		; number of bytes to write
+		int 0x80
+		mov eax, 1		; sys_exit system call
+		mov ebx, 0		; exit status is 0
+		int 0x80	
+
+./ex5
+	yellow
+	
+vim ex5.asm	
+	global _start
+
+	section .data
+		addr db "yellow"
+		
+	section .text
+	_start:
+		mov [addr], byte 'H'	# [] means we move some data into that address, byte 'H' = byte representation of character H
+		mov [addr+5], byte '!'
+		mov eax, 4
+		mov ebx, 1	
+		mov ecx, addr
+		mov edx,6
+		int 0x80
+		mov eax, 1
+		mov ebx, 0
+		int 0x80	
+		
+./ex5
+	Hello!
+
+section .data
+	; db is 1 byte
+	name1 db "sring1"
+	name2 db db 0xff
+	name1 db 100
+	; dw is 2 bytes
+	name4 dw 0x1234
+	name5 dw 1000
+	; dd is 4 bytes
+	name6 dd 0x12345678
+	name7 dd 100000
+	
+The stack
+	LIFO data structure
+	is an array
+	stack pointer	
+	random access
+	
+The Stack
+	ESP = 28
+	
+	[00] 0
+	[04] 0
+	...
+	[16] 0
+	[20] 0
+	[24] 0
+	[28] 0
+	
+
+push 1234 # decrease ESP (moving up), and push value 1234 in new ESP address
+push 8765
+push 246
+push 357
+
+	ESP=12
+	...
+	[08] 0 
+	[12] 357
+	[16] 246
+	[20] 8765
+	[24] 1234
+	[28] 0
+	
+#Push operation can be rewrite into these operations:	
+sub esp, 4
+mov [esp], dword 357
+
+pop eax
+	eax = 357
+	esp = 16
+
+#pop operation can be written into these ope:
+mov eax, dword [esp]
+add esp, 4
+
+vim ex6.asm
+	global _start
+	
+	_start:
+		sub esp, 4
+		mov [esp], byte 'H'
+		mov [esp+1], byte 'e'
+		mov [esp+2], byte 'y'
+		mov [esp+3], byte '!'
+		mov eax, 4
+		mov ebx, 1		; stdout file descriptor
+		mov ecx, esp	; pointer to bytes to write
+		mov edx, 4		; number of bytes to write
+		int 0x80		; system call
+		
+		
+[part4]
+call instruction:
+	1.pushes EIP to stack
+	2.performs a jump
+
+	> write functions
+	
+vim ex7.asm
+	global _start
+	_start:
+		call func
+		mov eax, 1
+		int 0x80
+		
+	func:
+		mov ebx, 42
+		pop eax
+		jmp eax
+		
+		
+ret # = return instruction
+return at the end of the function
+equivalent to:
+	pop eax
+	jmp eax
+	
+vim ex7.asm
+	global _start
+	_start:
+		call func
+		mov eax, 1
+		int 0x80
+		
+	func:
+		mov ebx, 42
+		ret
+		
+ebp = base pointer editor
+
+vim ex8.asm
+	global _start
+	_start:
+		call func
+		mov eax, 1
+		int 0x80
+		
+	func:
+		mov ebp, esp
+		sub esp, 2
+		mov [esp], byte 'H'
+		mov [esp+1], byte 'i'
+		mov eax, 4				; sys_write system call
+		mov ebx, 1				; stdout file descriptor
+		mov ecx, esp			; bytes to write
+		mov edx, 2				; number of bytes to write
+		int 0x80				; perform system call
+		mov esp, ebp
+		ret
+	
+vim ex8.asm
+	global _start
+	_start:
+		call func
+		mov eax, 1
+		int 0x80
+		
+	func:
+		push ebp		# <--- prologue
+		mov ebp, esp
+		sub esp, 2
+		mov [esp], byte 'H'
+		mov [esp+1], byte 'i'
+		mov eax, 4		; sys_write system call
+		mov ebx, 1		; stdout file descriptor
+		mov ecx, esp	; bytes to write
+		mov edx, 2		; number of bytes to write
+		int 0x80		; perform system call
+		mov esp, ebp	# <--- epilogue
+		pop ebp			#	 |
+		ret				# <---	
+
+[part5]
+
+Stack:
+		ESP = 32
+		EBP = 123
+		EAX = 0
+		
+		[00] 0
+		[00] 0
+		[00] 0
+		[00] 0
+		[00] 0
+		[00] 0
+		[00] 0
+		[00] 0
+	
+vim ex10.asm
+		global main
+		extern printf
+		
+		section .data
+			msg db "Testing %i...", 0x0a, 0x00 
+				# 0x0a = new line character
+				# 0x00 tells where end of string is, = NULL terminator
+		main:
+			push ebp
+			mov ebp, esp
+			push 123	#push 2nd argument to the stack
+			push msg	#push 1st argument to the stack
+			call printf	#call printf with first and second argument found in the stack
+			mov eax, 0
+			mov esp, ebp
+			pop ebp
+			ret
+			
+apt-get gcc-multilib
+nasm -f elf32 ex10.asm -o ex10.o
+gcc -m32 ex10.o -o ex10
+./ex10
+	Testing 123...
+	
+[^part6]
+
+vim add42.asm
+	global add42
+	add42:
+		push ebp
+		mov ebp, esp
+		mov eax, [ebp+8]
+		add eax, 42
+		mov esp, ebp
+		pop ebp
+		ret
+	
+vim add42.h
+	int add42(int x);
+	
+vim main.c
+	#include <stdio.h>
+	#include "add42.h"
+	
+	int main() {
+		int result;
+		result = add42(30);
+		printf("Result: %i\n", result);
+		return 0;
+	}
+	
+nasm -f elf32 add42.asm -o add42.o
+gcc -m32 add42.o main.c -o ex11
+
+./ex11
+	Result: 72
+	
+	
+	
